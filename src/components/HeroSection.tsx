@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -113,7 +114,15 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block">
+        <div
+          className="hidden lg:block cursor-pointer"
+          onClick={() =>
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            })
+          }
+        >
           <Image
             src="/assets/scrollDown.png"
             alt="Scroll Down"

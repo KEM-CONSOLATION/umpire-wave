@@ -28,7 +28,7 @@ const HeaderCard = ({
         </div>
         <p
           className="font-[600] text-[14px] lg:text-[16px] flex items-center text-[#FFFFFF] cursor-pointer"
-          onClick={() => router.back()}
+          onClick={() => router.push("/")}
         >
           {previousPage} <FiChevronRight />{" "}
           <span className="text-[#E7BF44]">{currentPage}</span>
