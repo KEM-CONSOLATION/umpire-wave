@@ -34,6 +34,15 @@ body {
   animation: marquee 20s linear infinite;
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(100%);
