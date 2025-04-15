@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroSection = () => {
@@ -66,12 +67,16 @@ const HeroSection = () => {
             </p>
 
             <div className=" space-y-[10px] space-x-[20px] w-full">
-              <p className=" lg:max-w-[175px] w-full text-center block lg:inline-block  font-[600] text-[16px] text-[#FFFFFF] py-[12px] px-[10px] bg-[#E7BF44] rounded-[8px]">
-                Explore Our Services
-              </p>
-              <p className="   lg:max-w-[120px] w-full text-center block lg:inline-block  font-[600] text-[16px] text-[#FFFFFF] py-[12px] px-[10px] border border-[#E7BF44] rounded-[8px]">
-                Get In Touch
-              </p>
+              <Link href="/service">
+                <p className=" lg:max-w-[175px] w-full text-center block lg:inline-block  font-[600] text-[16px] text-[#FFFFFF] py-[12px] px-[10px] bg-[#E7BF44] rounded-[8px]">
+                  Explore Our Services
+                </p>
+              </Link>
+              <Link href="/contact">
+                <p className="   lg:max-w-[120px] w-full text-center block lg:inline-block  font-[600] text-[16px] text-[#FFFFFF] py-[12px] px-[10px] border border-[#E7BF44] rounded-[8px]">
+                  Get In Touch
+                </p>
+              </Link>
             </div>
           </div>
 
