@@ -19,11 +19,15 @@ const HeaderCard = ({
     >
       <div className="max-w-6xl mx-auto flex items-end justify-between">
         <div>
-          <p className="font-[600] text-[#FFFFFF] text-[40px]">{title}</p>
-          <p className="font-[600] text-[16px] text-[#E7BF44]">{subtitle}</p>
+          <p className="font-[600] text-[#FFFFFF] text-[20px] lg:text-[40px]">
+            {title}
+          </p>
+          <p className="font-[600] text-[12px] lg:text-[16px] text-[#E7BF44]">
+            {subtitle}
+          </p>
         </div>
         <p
-          className="font-[600] text-[16px] flex items-center text-[#FFFFFF] cursor-pointer"
+          className="font-[600] text-[14px] lg:text-[16px] flex items-center text-[#FFFFFF] cursor-pointer"
           onClick={() => router.back()}
         >
           {previousPage} <FiChevronRight />{" "}

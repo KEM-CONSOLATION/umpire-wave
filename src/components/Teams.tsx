@@ -49,10 +49,7 @@ const Teams = () => {
         </p>
       </div>
 
-      <div
-        className="mt-8 overflow-x-auto scrollbar-hidden 
-      "
-      >
+      <div className="mt-8 overflow-x-auto scrollbar-hidden ">
         <div className="flex gap-6 min-w-max px-2">
           {teamMembers.map((member, index) => (
             <div
