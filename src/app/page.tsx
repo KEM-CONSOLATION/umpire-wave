@@ -3,6 +3,7 @@ import Creativity from "@/components/Creativity";
 import HeroSection from "@/components/HeroSection";
 import Nav from "@/components/Nav";
 import CoreServices from "@/components/CoreServices";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Creativity />
       <Brands />
       <CoreServices />
+      <Footer />
     </div>
   );
 }

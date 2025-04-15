@@ -65,17 +65,10 @@ const FlipCard: React.FC<FlipCardProps> = ({
 
         {/* Back Side */}
         <div
-          className={`absolute w-full h-full rounded-lg backface-hidden p-5 flex flex-col items-center justify-start overflow-y-auto ${bgColorMap[flippedBg]} ${textColorMap[flippedTextColor]} rotate-y-180`}
+          className={` shadow-md text-left text-sm absolute w-full h-full rounded-lg backface-hidden p-5 flex flex-col items-center justify-start overflow-y-auto ${bgColorMap[flippedBg]} ${textColorMap[flippedTextColor]} rotate-y-180`}
         >
-          <h3 className="text-lg font-semibold mb-3 text-center">
-            {backContent.heading}
-          </h3>
-          <div className="text-left text-sm px-2 w-full">
-            {backContent.description}
-          </div>
-          <button className="mt-4 px-4 py-2 border rounded-lg hover:bg-opacity-10 hover:bg-black transition-colors">
-            Learn More
-          </button>
+          <h3 className="mb-3 ">{backContent.heading}</h3>
+          <div className=" px-2 w-full">{backContent.description}</div>
         </div>
       </div>
     </div>
@@ -126,11 +119,10 @@ const CoreServices: React.FC = () => {
         heading:
           "We manage the careers of talented musicians, helping them grow their brand, connect with the right audiences, and secure meaningful opportunities. Our services include:",
         description: (
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Talent discovery & grooming</li>
-            <li>Career planning & development</li>
-            <li>Tour scheduling & bookings</li>
-            <li>Media training & public relations</li>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Talent discovery & grooming</li>
+            <li>2. Brand partnerships, PR, tour booking</li>
+            <li>3. Content marketing & social media strategy</li>
           </ul>
         ),
       },
@@ -144,115 +136,107 @@ const CoreServices: React.FC = () => {
       flippedTextColor: "white",
       backContent: {
         heading:
-          "Our state-of-the-art studios and veteran producers help artists create remarkable music. We provide:",
+          "Get your music heard on global platforms. We provide digital and physical distribution to ensure your sound reaches fans everywhere:",
         description: (
-          <ul className="list-disc pl-5 space-y-1 text-white">
-            <li>Professional recording facilities</li>
-            <li>Expert sound engineering & mixing</li>
-            <li>Album mastering & production</li>
-            <li>Digital distribution to global platforms</li>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Spotify, Apple Music, Boomplay, Audiomack, etc.</li>
+            <li>2. Royalty tracking and analytics</li>
+            <li>3. Sync licensing for film and TV</li>
           </ul>
         ),
       },
     },
     {
       number: "03.",
-      title: "Event Production & Management",
+      title: "Recording Studio Services",
       initialBg: "yellow-400",
       flippedBg: "white",
       initialTextColor: "white",
       flippedTextColor: "gray-700",
       backContent: {
         heading:
-          "From intimate showcases to major festivals, we handle every aspect of event planning and execution:",
+          "Our state-of-the-art recording facility is equipped for top-tier sound production:",
         description: (
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Venue selection & management</li>
-            <li>Technical production & equipment</li>
-            <li>Talent booking & coordination</li>
-            <li>Marketing & ticket sales</li>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Music recording, mixing & mastering.</li>
+            <li>2. Voice-over recording</li>
+            <li>3. Sound design & audio post-production</li>
+            <li>4. Production beats & songwriting support</li>
           </ul>
         ),
       },
     },
     {
       number: "04.",
-      title: "Video Production & Direction",
+      title: "Studio & Equipment Rentals",
       initialBg: "black",
       flippedBg: "white",
       initialTextColor: "white",
       flippedTextColor: "gray-700",
       fullWidth: true,
       backContent: {
-        heading:
-          "We manage the careers of talented musicians, helping them grow their brand, connect with the right audiences, and secure meaningful opportunities. Our services include:",
+        heading: "Need a creative space? We rent out:",
         description: (
-          <ol className="list-decimal pl-5 space-y-1">
-            <li>Talent discovery & grooming</li>
-            <li>Music video conceptualization & production</li>
-            <li>Documentary filmmaking</li>
-            <li>Live performance captures</li>
-            <li>Post-production & visual effects</li>
-          </ol>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Recording studios.</li>
+            <li>2. Film and photography sets</li>
+            <li>3. Lighting, cameras, and sound gear</li>
+          </ul>
         ),
       },
     },
     {
       number: "05.",
-      title: "Social Media Management",
+      title: "Film & Video Production",
       initialBg: "white",
       flippedBg: "yellow-400",
       initialTextColor: "gray-700",
       flippedTextColor: "white",
       backContent: {
-        heading:
-          "We build and maintain dynamic social media presences that grow your audience and strengthen fan relationships:",
+        heading: "From storytelling to screen, we bring concepts to life:",
         description: (
-          <ul className="list-disc pl-5 space-y-1 text-white">
-            <li>Content calendar creation & management</li>
-            <li>Community engagement & growth</li>
-            <li>Analytics & performance optimization</li>
-            <li>Paid promotion & influencer partnerships</li>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Short films & feature films.</li>
+            <li>2. Music video direction & production</li>
+            <li>3. Commercials & branded content</li>
+            <li>4. Documentaries</li>
           </ul>
         ),
       },
     },
     {
       number: "06.",
-      title: "Brand Development & Design",
+      title: "Event Coverage & Livestream",
       initialBg: "yellow-400",
       flippedBg: "white",
       initialTextColor: "white",
       flippedTextColor: "gray-700",
       backContent: {
-        heading:
-          "Our branding experts help you define and communicate your unique identity through:",
+        heading: "Capture every moment with our professional event solutions:",
         description: (
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Logo design & visual identity systems</li>
-            <li>Brand positioning & strategy</li>
-            <li>Merchandise design & production</li>
-            <li>Press kits & promotional materials</li>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Concerts, festivals & launches.</li>
+            <li>2. Livestream & multi-cam setup</li>
+            <li>3. Interviews & red carpet coverage</li>
           </ul>
         ),
       },
     },
     {
       number: "07.",
-      title: "Content Strategy & Creation",
+      title: "Photography & Photo Studio",
       initialBg: "white",
       flippedBg: "yellow-400",
       initialTextColor: "gray-700",
       flippedTextColor: "white",
       backContent: {
-        heading:
-          "We develop comprehensive content plans that tell your story across multiple platforms:",
+        heading: "Our photography arm delivers both creativity and quality:",
         description: (
-          <ul className="list-disc pl-5 space-y-1 text-white">
-            <li>Photography & visual asset creation</li>
-            <li>Copywriting & storytelling</li>
-            <li>Website content development</li>
-            <li>Audio & podcast production</li>
+          <ul className="list-none space-y-[16px]">
+            <li>1. Album covers, promo shots.</li>
+            <li>2. Fashion/editorial photoshoots</li>
+            <li>3. Event photography</li>
+            <li>4. Studio rental for creatives</li>
           </ul>
         ),
       },
