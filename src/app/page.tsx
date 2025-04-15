@@ -1,6 +1,8 @@
+import Brands from "@/components/Brands";
 import Creativity from "@/components/Creativity";
 import HeroSection from "@/components/HeroSection";
 import Nav from "@/components/Nav";
+import CoreServices from "@/components/CoreServices";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Nav />
       <HeroSection />
       <Creativity />
+      <Brands />
+      <CoreServices />
     </div>
   );
 }
