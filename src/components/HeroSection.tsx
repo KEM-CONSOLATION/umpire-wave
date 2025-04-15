@@ -52,7 +52,7 @@ const HeroSection = () => {
           className="flex-1 rounded-2xl relative h-full pb-[22px] lg:pb-[42px] pt-[20px] lg:pt-[86px] px-[10px] lg:px-[64px] bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/assets/hero.png')" }}
         >
-          <div className="max-w-[541px] mt-[84px] space-y-[24px]">
+          <div className="max-w-[541px] mt-[84px] space-y-[24px] ">
             <p className="font-[600] text-[12px] lg:text-[16px] text-[#E7BF44]">
               Umpire Wave Studios
             </p>
