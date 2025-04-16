@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
+      </head>
       <body className={`${jost.className} } antialiased`}>{children}</body>
     </html>
   );
