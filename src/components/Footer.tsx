@@ -29,16 +29,6 @@ const Footer = () => {
 
   return (
     <div className="">
-      <div className="  flex items-center justify-end mr-[20px]">
-        <Image
-          src="/assets/chat.svg"
-          alt="Footer Icon"
-          width={100}
-          height={100}
-          className=" max-w-[200px] w-full cursor-pointer"
-        />
-      </div>
-
       <div className="mt-[50px] bg-[#101010] relative text-white p-6 space-y-[32px]">
         <div
           className="absolute -top-[25px] left-1/2 transform -translate-x-1/2 cursor-pointer"
