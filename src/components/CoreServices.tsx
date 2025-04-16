@@ -8,7 +8,7 @@ type TextColorOption = "white" | "gray-700";
 
 interface BackContent {
   heading: string;
-  description: React.ReactNode; // Changed to ReactNode to support JSX elements
+  description: React.ReactNode;
 }
 
 interface FlipCardProps {
@@ -32,16 +32,15 @@ const FlipCard: React.FC<FlipCardProps> = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
-  // Map color names to actual Tailwind classes
   const bgColorMap: Record<ColorOption, string> = {
-    "yellow-400": "bg-yellow-400", // For #E7BF44
+    "yellow-400": "bg-yellow-400",
     white: "bg-white",
     black: "bg-black",
   };
 
   const textColorMap: Record<TextColorOption, string> = {
     white: "text-white",
-    "gray-700": "text-gray-700", // For #48484A
+    "gray-700": "text-gray-700",
   };
 
   return (
@@ -77,7 +76,6 @@ const FlipCard: React.FC<FlipCardProps> = ({
   );
 };
 
-// Add custom CSS for 3D transforms
 const CSSOverrides: React.FC = () => {
   return (
     <style jsx global>{`
