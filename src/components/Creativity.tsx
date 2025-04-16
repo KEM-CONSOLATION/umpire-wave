@@ -1,7 +1,16 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
+import Image from "next/image";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Creativity = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
   return (
     <div className="max-w-7xl mx-[10px] 2xl:mx-auto">
       <div className="max-w-[512px] mx-auto text-center mt-[64px] mb-[32px]">
@@ -16,7 +25,10 @@ const Creativity = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-[20px] place-items-center">
+      <div
+        className="grid md:grid-cols-3 gap-[20px] place-items-center"
+        data-aos="fade-up"
+      >
         <div className="space-y-[16px]">
           <Image
             src="/assets/image1.png"

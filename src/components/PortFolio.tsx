@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface Project {
   id: string;
@@ -53,6 +55,12 @@ const PortfolioItem: React.FC<Project> = ({
 };
 
 const PortFolio: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
   const [activeTab, setActiveTab] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -312,14 +320,16 @@ const PortFolio: React.FC = () => {
 
   return (
     <div className="px-4 my-[70px]">
-      <div className="max-w-[512px] mx-auto text-center mt-16">
+      <div
+        className="max-w-[512px] mx-auto text-center mt-16"
+        data-aos="fade-up"
+      >
         <p className="font-[600] text-[24px] text-[#48484A] mt-2 max-w-lg mx-auto">
           Don&apos;t miss a moment! Discover the unforgettable music, film, and
           visuals created by Umpire Wave Studios.
         </p>
       </div>
-      {/* Search Input */}
-      <div className="mt-8 max-w-lg mx-auto">
+      <div className="mt-8 max-w-lg mx-auto" data-aos="fade-left">
         <div className="flex items-center border border-[#48484A] rounded-[8px] px-4 py-2">
           <FiSearch className="text-[#48484A] text-xl" />
           <input
@@ -331,8 +341,10 @@ const PortFolio: React.FC = () => {
           />
         </div>
       </div>
-      {/* Tabs */}
-      <div className="mt-8 scrollbar-hidden flex items-center gap-[20px] justify-start md:justify-center overflow-x-auto w-full whitespace-nowrap">
+      <div
+        className="mt-8 scrollbar-hidden flex items-center gap-[20px] justify-start md:justify-center overflow-x-auto w-full whitespace-nowrap"
+        data-aos="fade-down"
+      >
         {tabs.map((tab) => (
           <p
             key={tab.id}
@@ -348,8 +360,10 @@ const PortFolio: React.FC = () => {
         ))}
       </div>
 
-      {/* Tab Content */}
-      <div className="mt-[64px] grid md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4 items-center">
+      <div
+        className="mt-[64px] grid md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4 items-center"
+        data-aos="fade-up"
+      >
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
             <PortfolioItem

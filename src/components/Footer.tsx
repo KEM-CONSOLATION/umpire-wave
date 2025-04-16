@@ -71,7 +71,7 @@ const Footer = () => {
             </p>
 
             <div className="flex justify-center items-center gap-4">
-              <Link href="http://x.com/workandshopapp" target="_blank">
+              <Link href="http://x.com/umpirewave" target="_blank">
                 <Image src={Twitter} alt="Twitter" />
               </Link>
               <Link
@@ -80,20 +80,17 @@ const Footer = () => {
               >
                 <Image src={Facebook} alt="Facebook" />
               </Link>
-              <Link
-                href="https://www.youtube.com/@workandshopapp"
-                target="_blank"
-              >
+              <Link href="https://www.youtube.com/@umpirewave" target="_blank">
                 <Image src={Youtube} alt="Youtube" />
               </Link>
               <Link
-                href="https://www.tiktok.com/@workandshopapp?is_from_webapp=1&sender_device=pc"
+                href="https://www.tiktok.com/@umpirewave?is_from_webapp=1&sender_device=pc"
                 target="_blank"
               >
                 <Image src={Tiktok} alt="Tiktok" />
               </Link>
               <Link
-                href="http://linkedin.com/showcase/workandshopapp"
+                href="http://linkedin.com/showcase/umpirewave"
                 target="_blank"
               >
                 <Image src={Instagram} alt="Instagram" />

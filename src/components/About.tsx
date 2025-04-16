@@ -1,21 +1,30 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Teams from "./Teams";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="max-w-7xl mx-[10px] 2xl:mx-auto mt-[45px] space-y-[20px]">
       <div className=" place-items-center grid gap-[20px] md:flex items-center md:justify-between">
-        <div className=" max-w-[617px] w-full">
+        <div className=" max-w-[617px] w-full" data-aos="fade-up">
           <Image
-            src="/assets/Frame1.png"
+            src="/assets/About1.svg"
             alt="Image1"
             width={100}
             height={100}
             className="object-cover max-w-[600px]  w-full"
           />
         </div>
-        <div className=" max-w-[541px] space-y-[16px]">
+        <div className=" max-w-[541px] space-y-[16px]" data-aos="fade-down">
           <p className=" font-[600] text-[12px] text-[#E7BF44]">
             Where Creativity Meets Purpose
           </p>
@@ -37,7 +46,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className=" grid place-items-center gap-[20px] md:flex items-center md:justify-between">
+      <div
+        className=" grid place-items-center gap-[20px] md:flex items-center md:justify-between"
+        data-aos="fade-up"
+      >
         <div className=" max-w-[541px] space-y-[16px] ">
           <p className=" font-[700] text-[40px] text-[#48484A]">
             The Heartbeat of Umpire Wave
@@ -52,7 +64,7 @@ const About = () => {
         </div>
         <div className=" max-w-[617px] w-full">
           <Image
-            src="/assets/Frame2.png"
+            src="/assets/About2.svg"
             alt="Image1"
             width={100}
             height={100}

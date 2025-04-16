@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import EmailIcon from "@assets/sms-tracking.svg";
@@ -14,7 +14,8 @@ import Link from "next/link";
 import Youtube from "@assets/YouTubeIcon_.svg";
 import Tiktok from "@assets/TikTokIcon_.svg";
 import emailjs from "@emailjs/browser";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 interface FormData {
   first_name: string;
   last_name: string;
@@ -23,6 +24,13 @@ interface FormData {
 }
 
 const ContactPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -83,7 +91,10 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="my-[50px] p-6 border border-[#E7BF44] max-w-6xl mx-auto rounded-[8px] ">
+    <div
+      className="my-[50px] p-6 border border-[#E7BF44] max-w-6xl mx-auto rounded-[8px] "
+      data-aos="fade-up"
+    >
       <div className="space-y-[13px] text-center">
         {status.type && (
           <div
@@ -112,7 +123,7 @@ const ContactPage = () => {
             <div>
               <p className="  text-[24px] text-[#48484A]">Email</p>
               <p className="  text-[16px] text-[#48484A]">
-                Info@workandshopapp.com
+                info@umpirewave.com
               </p>
             </div>
           </div>
@@ -140,7 +151,7 @@ const ContactPage = () => {
               </p>
               <div className="flex items-center gap-[16px]">
                 <Link
-                  href="http://linkedin.com/showcase/workandshopapp"
+                  href="http://linkedin.com/showcase/umpirewave"
                   target="blank"
                 >
                   <Image src={LinkedIn} alt="LinkedIn Icon" />
@@ -151,17 +162,14 @@ const ContactPage = () => {
                 >
                   <Image src={Facebook} alt="Facebook Icon" />
                 </Link>
-                <Link href="http://x.com/workandshopapp" target="blank">
+                <Link href="http://x.com/umpirewave" target="blank">
                   <Image src={X} alt="X Icon" />
                 </Link>
-                <Link
-                  href="https://www.youtube.com/@workandshopapp"
-                  target="blank"
-                >
+                <Link href="https://www.youtube.com/@umpirewave" target="blank">
                   <Image src={Youtube} alt="Twitter" />
                 </Link>
                 <Link
-                  href="https://www.tiktok.com/@workandshopapp?is_from_webapp=1&sender_device=pc"
+                  href="https://www.tiktok.com/@umpirewave?is_from_webapp=1&sender_device=pc"
                   target="blank"
                 >
                   <Image src={Tiktok} alt="Twitter" />

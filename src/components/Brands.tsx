@@ -1,9 +1,17 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Brands = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
   return (
-    <div className="max-w-7xl mx-[10px] 2xl:mx-auto">
+    <div className="max-w-7xl mx-[10px] 2xl:mx-auto" data-aos="fade-up">
       <div className="max-w-[512px] mx-auto text-center mt-[64px] mb-[32px]">
         <p className="font-[600] text-[24px] text-[#48484A]">
           Brands we work with

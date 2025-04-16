@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <div className="max-w-7xl mx-[10px] 2xl:mx-auto">
       <div className="flex items-center gap-[16px]">
-        <div className="space-y-[16px] hidden lg:block">
+        <div className="space-y-[16px] hidden lg:block animate-pulse">
           <Image
             src="/assets/facebook.svg"
             alt="Facebook"

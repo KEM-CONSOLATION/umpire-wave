@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 type ColorOption = "yellow-400" | "white" | "black";
 type TextColorOption = "white" | "gray-700";
@@ -243,8 +245,14 @@ const CoreServices: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
   return (
-    <div className="max-w-7xl mx-2 2xl:mx-auto">
+    <div className="max-w-7xl mx-2 2xl:mx-auto" data-aos="fade-up">
       <CSSOverrides />
       <div className="max-w-lg mx-auto text-center mt-16 mb-8">
         <p className="font-semibold text-2xl text-gray-700">

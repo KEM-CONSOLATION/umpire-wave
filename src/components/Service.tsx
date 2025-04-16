@@ -1,9 +1,20 @@
-import React from "react";
-
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Service = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
   return (
     <div className="px-4 my-[70px]">
-      <div className=" max-w-[649px] mx-auto text-center mt-16 mb-8">
+      <div
+        className=" max-w-[649px] mx-auto text-center mt-16 mb-8"
+        data-aos="fade-up"
+      >
         <p className="font-semibold text-2xl text-gray-700">
           Creative Solutions Tailored for Artists, Brands & Storytellers
         </p>
@@ -16,7 +27,10 @@ const Service = () => {
       </div>
 
       <div className=" mt-[32px] grid md:grid-cols-2 place-items-center gap-[16px]">
-        <div className="bg-[#E7BF44] p-[10px] rounded-[10px] text-[#FFFFFF]  w-full h-[309px] space-y-[16px]">
+        <div
+          className="bg-[#E7BF44] p-[10px] rounded-[10px] text-[#FFFFFF]  w-full h-[309px] space-y-[16px]"
+          data-aos="fade-up"
+        >
           <p className=" font-[600] text-[24px]">
             Artiste Management & Promotion
           </p>
@@ -30,7 +44,10 @@ const Service = () => {
           <p>3. Content marketing & social media strategy</p>
         </div>
 
-        <div className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px]">
+        <div
+          className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px]"
+          data-aos="fade-down"
+        >
           <p className=" font-[600] text-[24px]">Music Distribution</p>
           <p className=" font-[400] text-[16px]">
             Get your music heard on global platforms. We provide digital and
@@ -41,7 +58,10 @@ const Service = () => {
           <p>3. Sync licensing for film and TV</p>
         </div>
 
-        <div className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px]">
+        <div
+          className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px]"
+          data-aos="fade-left"
+        >
           <p className=" font-[600] text-[24px]">Recording Studio Services</p>
           <p className=" font-[400] text-[16px]">
             Our state-of-the-art recording facility is equipped for top-tier
@@ -53,7 +73,10 @@ const Service = () => {
           <p>4. Production beats & songwriting support</p>
         </div>
 
-        <div className="bg-[#E7BF44] p-[10px] rounded-[10px] text-[#FFFFFF]  w-full h-[309px] space-y-[16px]">
+        <div
+          className="bg-[#E7BF44] p-[10px] rounded-[10px] text-[#FFFFFF]  w-full h-[309px] space-y-[16px]"
+          data-aos="fade-right"
+        >
           <p className=" font-[600] text-[24px]">Studio & Equipment Rentals</p>
           <p className=" font-[400] text-[16px]">
             Need a creative space? We rent out:
@@ -63,7 +86,10 @@ const Service = () => {
           <p>3. Lighting, cameras, and sound gear</p>
         </div>
 
-        <div className="bg-[#E7BF44] p-[10px] rounded-[10px] text-[#FFFFFF]  w-full h-[309px] space-y-[16px]">
+        <div
+          className="bg-[#E7BF44] p-[10px] rounded-[10px] text-[#FFFFFF]  w-full h-[309px] space-y-[16px]"
+          data-aos="fade-up"
+        >
           <p className=" font-[600] text-[24px]">Film & Video Production</p>
           <p className=" font-[400] text-[16px]">
             From storytelling to screen, we bring concepts to life:
@@ -74,7 +100,10 @@ const Service = () => {
           <p>4. Documentaries</p>
         </div>
 
-        <div className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px]">
+        <div
+          className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px]"
+          data-aos="fade-left"
+        >
           <p className=" font-[600] text-[24px]">Event Coverage & Livestream</p>
           <p className=" font-[400] text-[16px]">
             Capture every moment with our professional event solutions:
@@ -84,7 +113,10 @@ const Service = () => {
           <p>3. Interviews & red carpet coverage</p>
         </div>
 
-        <div className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px] md:col-span-2 md:mx-auto max-w-[610px]">
+        <div
+          className="border border-[#E7BF44] p-[10px] rounded-[10px] text-[#48484A] bg-[#FFFFFF]  w-full h-[309px] space-y-[16px] md:col-span-2 md:mx-auto max-w-[610px]"
+          data-aos="fade-down"
+        >
           <p className=" font-[600] text-[24px]">Photography & Photo Studio</p>
           <p className=" font-[400] text-[16px]">
             Our photography arm delivers both creativity and quality:

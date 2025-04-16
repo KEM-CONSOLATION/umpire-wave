@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const teamMembers = [
   {
@@ -35,8 +38,14 @@ const teamMembers = [
 ];
 
 const Teams = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, []);
   return (
-    <div className="px-4">
+    <div className="px-4" data-aos="fade-up">
       <div className="max-w-lg mx-auto text-center mt-16 mb-8">
         <p className="font-semibold text-2xl text-gray-700">
           The Wave Makers Behind the Scenes
