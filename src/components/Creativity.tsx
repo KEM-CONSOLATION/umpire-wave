@@ -26,10 +26,10 @@ const Creativity = () => {
       </div>
 
       <div
-        className="grid md:grid-cols-3 gap-[20px] place-items-center"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px] place-items-center"
         data-aos="fade-up"
       >
-        <div className="space-y-[16px]">
+        {/* <div className="space-y-[16px]">
           <Image
             src="/assets/image1.png"
             alt="Image1"
@@ -81,6 +81,67 @@ const Creativity = () => {
             height={410}
             priority
             className="object-contain max-w-[400px] w-full h-[410px] transform transition duration-300 ease-in-out hover:scale-105"
+          />
+        </div> */}
+
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+          <Image
+            src="/assets/artisteManagement.jpg"
+            alt="Artiste Management"
+            width={400}
+            height={410}
+            priority
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          />
+        </div>
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+          <Image
+            src="/assets/eventCoverage.jpg"
+            alt="Artiste Management"
+            width={400}
+            height={410}
+            priority
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          />
+        </div>
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+          <Image
+            src="/assets/musicProduction.jpg"
+            alt="Artiste Management"
+            width={400}
+            height={410}
+            priority
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          />
+        </div>
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+          <Image
+            src="/assets/photography.jpg"
+            alt="Artiste Management"
+            width={400}
+            height={410}
+            priority
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          />
+        </div>
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+          <Image
+            src="/assets/studioRecording.jpg"
+            alt="Artiste Management"
+            width={400}
+            height={410}
+            priority
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          />
+        </div>
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+          <Image
+            src="/assets/studioRentals.jpg"
+            alt="Artiste Management"
+            width={400}
+            height={410}
+            priority
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
       </div>

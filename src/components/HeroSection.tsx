@@ -80,42 +80,57 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center justify-end">
-            {/* <Image
-              src="/assets/arrow-left.svg"
-              alt="Arrow Left"
-              width={50}
-              height={50}
-              priority
-              className="object-contain max-w-[50px] w-full"
-            /> */}
-            <div className="flex items-center gap-[20px]">
+          <div className="hidden md:flex items-center justify-end brands-marquee w-[500px] brands-marquee">
+            <div className="flex items-center space-x-[16px]">
               <Image
-                src="/assets/hero1.png"
+                src="/assets/artisteManagement.jpg"
                 alt="Hero Image 1"
-                width={200}
-                height={150}
+                width={100}
+                height={100}
                 priority
-                className="object-contain max-w-[200px] h-[150px] w-full"
+                className="object-contain max-w-[100px] h-[100px] w-full"
               />
               <Image
-                src="/assets/hero2.png"
+                src="/assets/eventCoverage.jpg"
                 alt="Hero Image 2"
-                width={200}
-                height={150}
+                width={100}
+                height={100}
                 priority
-                className="object-contain max-w-[200px] h-[150px] w-full"
+                className="object-contain max-w-[100px] h-[100px] w-full"
+              />
+              <Image
+                src="/assets/musicProduction.jpg"
+                alt="Hero Image 2"
+                width={100}
+                height={100}
+                priority
+                className="object-contain max-w-[100px] h-[100px] w-full"
+              />
+              <Image
+                src="/assets/photography.jpg"
+                alt="Hero Image 2"
+                width={100}
+                height={100}
+                priority
+                className="object-contain max-w-[100px] h-[100px] w-full"
+              />
+              <Image
+                src="/assets/studioRecording.jpg"
+                alt="Hero Image 2"
+                width={100}
+                height={100}
+                priority
+                className="object-contain max-w-[100px] h-[100px] w-full"
+              />
+              <Image
+                src="/assets/studioRentals.jpg"
+                alt="Hero Image 2"
+                width={100}
+                height={100}
+                priority
+                className="object-contain max-w-[100px] h-[100px] w-full"
               />
             </div>
-
-            {/* <Image
-              src="/assets/arrow-right.svg"
-              alt="Arrow Left"
-              width={50}
-              height={50}
-              priority
-              className="object-contain max-w-[50px] w-full"
-            /> */}
           </div>
         </div>
 
