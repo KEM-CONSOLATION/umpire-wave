@@ -4,10 +4,10 @@ import React from "react";
 import Image from "next/image";
 import FooterIcon from "@assets/FooterIcon.svg";
 import WorkLogo from "@assets/UmpireLogo.svg";
-import Twitter from "@assets/TwitterIcon.svg";
+// import Twitter from "@assets/TwitterIcon.svg";
 import Facebook from "@assets/FaceB.svg";
 import Instagram from "@assets/insta.svg";
-import Youtube from "@assets/YoutubeIcon.svg";
+// import Youtube from "@assets/YoutubeIcon.svg";
 import Tiktok from "@assets/TiktokIcon.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -61,26 +61,26 @@ const Footer = () => {
             </p>
 
             <div className="flex justify-center items-center gap-4">
-              <Link href="http://x.com/umpirewave" target="_blank">
+              {/* <Link href="http://x.com/umpirewave" target="_blank">
                 <Image src={Twitter} alt="Twitter" />
-              </Link>
+              </Link> */}
               <Link
-                href="https://www.facebook.com/share/19Wtwusa3Q/?mibextid=wwXIfr"
+                href="https://www.facebook.com/share/1DX7QdVcRs"
                 target="_blank"
               >
                 <Image src={Facebook} alt="Facebook" />
               </Link>
-              <Link href="https://www.youtube.com/@umpirewave" target="_blank">
+              {/* <Link href="https://www.youtube.com/@umpirewave" target="_blank">
                 <Image src={Youtube} alt="Youtube" />
-              </Link>
+              </Link> */}
               <Link
-                href="https://www.tiktok.com/@umpirewave?is_from_webapp=1&sender_device=pc"
+                href="https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1"
                 target="_blank"
               >
                 <Image src={Tiktok} alt="Tiktok" />
               </Link>
               <Link
-                href="http://linkedin.com/showcase/umpirewave"
+                href="https://www.instagram.com/_umpirewavestudio?igsh=YzljYTk1ODg3Zg=="
                 target="_blank"
               >
                 <Image src={Instagram} alt="Instagram" />

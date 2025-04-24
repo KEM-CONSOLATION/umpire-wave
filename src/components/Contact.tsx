@@ -6,12 +6,12 @@ import { useForm } from "react-hook-form";
 import EmailIcon from "@assets/sms-tracking.svg";
 import CallIcon from "@assets/call-calling.svg";
 import GlobalIcon from "@assets/global-search.svg";
-import LinkedIn from "@assets/LInkedIn2.svg";
+// import LinkedIn from "@assets/LInkedIn2.svg";
 import Facebook from "@assets/Facebook2.svg";
-import X from "@assets/X.svg";
+// import X from "@assets/X.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Youtube from "@assets/YouTubeIcon_.svg";
+// import Youtube from "@assets/YouTubeIcon_.svg";
 import Tiktok from "@assets/TikTokIcon_.svg";
 import emailjs from "@emailjs/browser";
 import AOS from "aos";
@@ -150,27 +150,27 @@ const ContactPage = () => {
                 forefront.
               </p>
               <div className="flex items-center gap-[16px]">
-                <Link
+                {/* <Link
                   href="http://linkedin.com/showcase/umpirewave"
                   target="blank"
                 >
                   <Image src={LinkedIn} alt="LinkedIn Icon" />
-                </Link>
+                </Link> */}
                 <Link
-                  href="https://www.facebook.com/share/19Wtwusa3Q/?mibextid=wwXIfr"
-                  target="blank"
+                  href="https://www.facebook.com/share/1DX7QdVcRs"
+                  target="_blank"
                 >
                   <Image src={Facebook} alt="Facebook Icon" />
                 </Link>
-                <Link href="http://x.com/umpirewave" target="blank">
+                {/* <Link href="http://x.com/umpirewave" target="blank">
                   <Image src={X} alt="X Icon" />
-                </Link>
-                <Link href="https://www.youtube.com/@umpirewave" target="blank">
+                </Link> */}
+                {/* <Link href="https://www.youtube.com/@umpirewave" target="blank">
                   <Image src={Youtube} alt="Twitter" />
-                </Link>
+                </Link> */}
                 <Link
-                  href="https://www.tiktok.com/@umpirewave?is_from_webapp=1&sender_device=pc"
-                  target="blank"
+                  href="https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1"
+                  target="_blank"
                 >
                   <Image src={Tiktok} alt="Twitter" />
                 </Link>

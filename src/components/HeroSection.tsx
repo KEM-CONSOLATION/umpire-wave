@@ -7,47 +7,62 @@ const HeroSection = () => {
   return (
     <div className="max-w-7xl mx-[10px] 2xl:mx-auto">
       <div className="flex items-center gap-[16px]">
-        <div className="space-y-[16px] hidden lg:block animate-pulse">
-          <Image
-            src="/assets/facebook.svg"
-            alt="Facebook"
-            width={50}
-            height={50}
-            priority
-            className="object-contain w-full"
-          />
-          <Image
-            src="/assets/instagram.svg"
-            alt="Instagram"
-            width={50}
-            height={50}
-            priority
-            className="object-contain w-full"
-          />
-          <Image
-            src="/assets/tiktok.svg"
-            alt="TikTok"
-            width={50}
-            height={50}
-            priority
-            className="object-contain w-full"
-          />
-          <Image
+        <div className="space-y-[16px] hidden lg:block animate-pulse space-x-[10px]">
+          <Link
+            href="https://www.facebook.com/share/1DX7QdVcRs"
+            target="_blank"
+          >
+            <Image
+              src="/assets/facebook.svg"
+              alt="Facebook"
+              width={50}
+              height={50}
+              priority
+              className="object-contain w-full"
+            />
+          </Link>
+          <Link
+            href="https://www.instagram.com/_umpirewavestudio?igsh=YzljYTk1ODg3Zg=="
+            target="_blank"
+          >
+            <Image
+              src="/assets/instagram.svg"
+              alt="Instagram"
+              width={50}
+              height={50}
+              priority
+              className="object-contain w-full"
+            />
+          </Link>
+          <Link
+            href="https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1"
+            target="_blank"
+          >
+            <Image
+              src="/assets/tiktok.svg"
+              alt="TikTok"
+              width={50}
+              height={50}
+              priority
+              className="object-contain w-full"
+            />
+          </Link>
+          {/* <Image
             src="/assets/twitter.svg"
             alt="Twitter"
             width={50}
             height={50}
             priority
             className="object-contain w-full"
-          />
-          <Image
+          /> */}
+          {/* <Image
             src="/assets/youtube.svg"
             alt="YouTube"
             width={50}
             height={50}
             priority
             className="object-contain w-full"
-          />
+          /> */}
         </div>
 
         <div
