@@ -29,61 +29,6 @@ const Creativity = () => {
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px] place-items-center"
         data-aos="fade-up"
       >
-        {/* <div className="space-y-[16px]">
-          <Image
-            src="/assets/image1.png"
-            alt="Image1"
-            width={400}
-            height={410}
-            priority
-            className="object-contain max-w-[400px] w-full h-[410px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-          <Image
-            src="/assets/image4.png"
-            alt="Image4"
-            width={400}
-            height={240}
-            priority
-            className="object-contain max-w-[400px] w-full h-[240px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-        </div>
-        <div className="space-y-[16px]">
-          <Image
-            src="/assets/image2.png"
-            alt="Image2"
-            width={400}
-            height={324}
-            priority
-            className="object-contain max-w-[400px] w-full h-[324px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-          <Image
-            src="/assets/image5.png"
-            alt="Image5"
-            width={400}
-            height={324}
-            priority
-            className="object-contain max-w-[400px] w-full h-[324px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-        </div>
-        <div className="space-y-[16px]">
-          <Image
-            src="/assets/image3.png"
-            alt="Image3"
-            width={400}
-            height={240}
-            priority
-            className="object-contain max-w-[400px] w-full h-[240px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-          <Image
-            src="/assets/image6.png"
-            alt="Image6"
-            width={400}
-            height={410}
-            priority
-            className="object-contain max-w-[400px] w-full h-[410px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-        </div> */}
-
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
           <Image
             src="/assets/artisteManagement.jpg"
