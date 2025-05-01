@@ -7,7 +7,7 @@ import WorkLogo from "@assets/UmpireLogo.svg";
 // import Twitter from "@assets/TwitterIcon.svg";
 import Facebook from "@assets/FaceB.svg";
 import Instagram from "@assets/insta.svg";
-// import Youtube from "@assets/YoutubeIcon.svg";
+import Youtube from "@assets/YoutubeIcon.svg";
 import Tiktok from "@assets/TiktokIcon.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -70,9 +70,9 @@ const Footer = () => {
               >
                 <Image src={Facebook} alt="Facebook" />
               </Link>
-              {/* <Link href="https://www.youtube.com/@umpirewave" target="_blank">
+              <Link href="https://www.youtube.com/@umpirewave" target="_blank">
                 <Image src={Youtube} alt="Youtube" />
-              </Link> */}
+              </Link>
               <Link
                 href="https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1"
                 target="_blank"

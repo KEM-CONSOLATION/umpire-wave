@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 type ColorOption = "yellow-400" | "white" | "black";
 type TextColorOption = "white" | "gray-700";
@@ -12,21 +13,15 @@ interface BackContent {
 }
 
 interface FlipCardProps {
-  number: string;
-  title: string;
-  initialBg: ColorOption;
+  imageSrc: string;
   flippedBg: ColorOption;
-  initialTextColor: TextColorOption;
   flippedTextColor: TextColorOption;
   backContent: BackContent;
 }
 
 const FlipCard: React.FC<FlipCardProps> = ({
-  number,
-  title,
-  initialBg,
+  imageSrc,
   flippedBg,
-  initialTextColor,
   flippedTextColor,
   backContent,
 }) => {
@@ -54,22 +49,20 @@ const FlipCard: React.FC<FlipCardProps> = ({
           isFlipped ? "rotate-y-180" : ""
         }`}
       >
-        {/* Front Side */}
-        <div
-          className={`absolute w-full h-full rounded-lg backface-hidden p-5 flex items-center justify-center ${bgColorMap[initialBg]} ${textColorMap[initialTextColor]}`}
-        >
-          <div className="space-y-8">
-            <p className="text-start text-4xl font-normal">{number}</p>
-            <p className="text-center text-4xl font-normal">{title}</p>
-          </div>
+        <div className="absolute w-full h-full rounded-lg backface-hidden">
+          <Image
+            src={imageSrc}
+            alt="Service"
+            className="w-full h-full object-cover rounded-lg"
+            layout="fill"
+          />
         </div>
 
-        {/* Back Side */}
         <div
-          className={` shadow-md text-left text-sm absolute w-full h-full rounded-lg backface-hidden p-5 flex flex-col items-center justify-start overflow-y-auto ${bgColorMap[flippedBg]} ${textColorMap[flippedTextColor]} rotate-y-180`}
+          className={`shadow-md text-left text-sm absolute w-full h-full rounded-lg backface-hidden p-5 flex flex-col items-center justify-start overflow-y-auto ${bgColorMap[flippedBg]} ${textColorMap[flippedTextColor]} rotate-y-180`}
         >
-          <h3 className="mb-3 ">{backContent.heading}</h3>
-          <div className=" px-2 w-full">{backContent.description}</div>
+          <h3 className="mb-3">{backContent.heading}</h3>
+          <div className="px-2 w-full">{backContent.description}</div>
         </div>
       </div>
     </div>
@@ -96,6 +89,7 @@ const CSSOverrides: React.FC = () => {
 };
 
 interface ServiceItem {
+  imageSrc: string;
   number: string;
   title: string;
   initialBg: ColorOption;
@@ -109,6 +103,7 @@ interface ServiceItem {
 const CoreServices: React.FC = () => {
   const services: ServiceItem[] = [
     {
+      imageSrc: "/assets/artisteManagement.jpg",
       number: "01.",
       title: "Artiste Management & Promotion",
       initialBg: "yellow-400",
@@ -128,6 +123,7 @@ const CoreServices: React.FC = () => {
       },
     },
     {
+      imageSrc: "/assets/musicProduction.jpg",
       number: "02.",
       title: "Music Production & Distribution",
       initialBg: "white",
@@ -147,6 +143,7 @@ const CoreServices: React.FC = () => {
       },
     },
     {
+      imageSrc: "/assets/studioRecording.jpg",
       number: "03.",
       title: "Recording Studio Services",
       initialBg: "yellow-400",
@@ -167,13 +164,13 @@ const CoreServices: React.FC = () => {
       },
     },
     {
+      imageSrc: "/assets/studioRentals.jpg",
       number: "04.",
       title: "Studio & Equipment Rentals",
       initialBg: "black",
       flippedBg: "white",
       initialTextColor: "white",
       flippedTextColor: "gray-700",
-      fullWidth: true,
       backContent: {
         heading: "Need a creative space? We rent out:",
         description: (
@@ -185,26 +182,9 @@ const CoreServices: React.FC = () => {
         ),
       },
     },
+
     {
-      number: "05.",
-      title: "Film & Video Production",
-      initialBg: "white",
-      flippedBg: "yellow-400",
-      initialTextColor: "gray-700",
-      flippedTextColor: "white",
-      backContent: {
-        heading: "From storytelling to screen, we bring concepts to life:",
-        description: (
-          <ul className="list-none space-y-[16px]">
-            <li>1. Short films & feature films.</li>
-            <li>2. Music video direction & production</li>
-            <li>3. Commercials & branded content</li>
-            <li>4. Documentaries</li>
-          </ul>
-        ),
-      },
-    },
-    {
+      imageSrc: "/assets/eventCoverage.jpg",
       number: "06.",
       title: "Event Coverage & Livestream",
       initialBg: "yellow-400",
@@ -223,6 +203,7 @@ const CoreServices: React.FC = () => {
       },
     },
     {
+      imageSrc: "/assets/photography.jpg",
       number: "07.",
       title: "Photography & Photo Studio",
       initialBg: "white",
@@ -250,37 +231,32 @@ const CoreServices: React.FC = () => {
     });
   }, []);
   return (
-    <div className="max-w-7xl mx-2 2xl:mx-auto" data-aos="fade-up">
+    <div className="max-w-7xl mx-auto" data-aos="fade-up">
       <CSSOverrides />
       <div className="max-w-lg mx-auto text-center mt-16 mb-8">
         <p className="font-semibold text-2xl text-gray-700">
-          Our Core Services
+          {/* Our Core Services */}
+          Where Creativity Meets Impact
         </p>
         <p className="font-normal text-base text-gray-700">
-          At Umpire Wave Studios, we bring ideas to life through a suite of
+          {/* At Umpire Wave Studios, we bring ideas to life through a suite of
           premium multimedia services. Whether you&apos;re a musician,
           filmmaker, brand, or content creator, our end-to-end solutions are
           designed to elevate your vision and connect with audiences across the
-          globe.
+          globe. */}
+          Umpire Wave Studios is a full-service entertainment company fusing
+          music, film, and visual arts. We&apos;re here to amplify African
+          voices, empower creators, and deliver captivating experiences that
+          resonate globally.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 place-items-center">
         {services.map((service, index) => (
-          <div
-            key={index}
-            className={
-              service.fullWidth
-                ? "col-span-1 md:col-span-3 w-full max-w-md"
-                : "w-full max-w-md"
-            }
-          >
+          <div key={index} className={"w-full max-w-md"}>
             <FlipCard
-              number={service.number}
-              title={service.title}
-              initialBg={service.initialBg}
+              imageSrc={service.imageSrc}
               flippedBg={service.flippedBg}
-              initialTextColor={service.initialTextColor}
               flippedTextColor={service.flippedTextColor}
               backContent={service.backContent}
             />

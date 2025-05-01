@@ -1,6 +1,5 @@
 "use client";
 import Brands from "@/components/Brands";
-import Creativity from "@/components/Creativity";
 import HeroSection from "@/components/HeroSection";
 import Nav from "@/components/Nav";
 import CoreServices from "@/components/CoreServices";
@@ -12,7 +11,7 @@ export default function Home() {
     <div className="  relative">
       <div className="fixed bottom-4 right-4 z-50">
         <a
-          href="https://wa.me/2347031896845"
+          href="https://wa.me/2349121096797"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -28,9 +27,8 @@ export default function Home() {
 
       <Nav />
       <HeroSection />
-      <Creativity />
-      <Brands />
       <CoreServices />
+      <Brands />
       <Footer />
     </div>
   );

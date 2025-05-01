@@ -55,14 +55,19 @@ const HeroSection = () => {
             priority
             className="object-contain w-full"
           /> */}
-          {/* <Image
-            src="/assets/youtube.svg"
-            alt="YouTube"
-            width={50}
-            height={50}
-            priority
-            className="object-contain w-full"
-          /> */}
+          <Link
+            href="https://youtube.com/@umpirewave?si=1cRjpXv-gbmIXEyu"
+            target="_blank"
+          >
+            <Image
+              src="/assets/youtube.svg"
+              alt="YouTube"
+              width={50}
+              height={50}
+              priority
+              className="object-contain w-full"
+            />
+          </Link>
         </div>
 
         <div
@@ -70,10 +75,10 @@ const HeroSection = () => {
           style={{ backgroundImage: "url('/assets/hero.png')" }}
         >
           <div className="max-w-[541px] mt-[84px] space-y-[24px] mx-auto text-center">
-            <p className="font-[600] text-[12px] lg:text-[16px] text-[#E7BF44]">
+            <p className="font-[600] text-[20px] lg:text-[40px] text-[#E7BF44]">
               Umpire Wave Studios
             </p>
-            <p className="font-[700] text-[20px] lg:text-[40px] text-[#FFFFFF]">
+            <p className="font-[700] text-[12px] lg:text-[16px] text-[#FFFFFF]">
               Sound. Vision. Influence.
             </p>
             <p className="font-[400] text-[16px] lg:text-[20px] text-[#FFFFFF]">

@@ -11,7 +11,7 @@ import Facebook from "@assets/Facebook2.svg";
 // import X from "@assets/X.svg";
 import Image from "next/image";
 import Link from "next/link";
-// import Youtube from "@assets/YouTubeIcon_.svg";
+import Youtube from "@assets/YouTubeIcon_.svg";
 import Tiktok from "@assets/TikTokIcon_.svg";
 import emailjs from "@emailjs/browser";
 import AOS from "aos";
@@ -123,7 +123,7 @@ const ContactPage = () => {
             <div>
               <p className="  text-[24px] text-[#48484A]">Email</p>
               <p className="  text-[16px] text-[#48484A]">
-                info@umpirewave.com
+                Help@umpirewave.com <br /> Umpirewave@gmail.com
               </p>
             </div>
           </div>
@@ -133,9 +133,12 @@ const ContactPage = () => {
             <div className="space-y-[16px]">
               <p className="  text-[24px] text-[#48484A]">Call</p>
               <p className="  text-[16px] text-[#48484A]">
-                Mon - Fri, 9am - 5pm
+                Mon - Fri, 9am - 7pm
               </p>
-              <p className="  text-[16px] text-[#48484A]">+2349031446662</p>
+              <p className="  text-[16px] text-[#48484A]">
+                Saturdays 10am - 5pm
+              </p>
+              <p className="  text-[16px] text-[#48484A]">09121096797</p>
             </div>
           </div>
 
@@ -143,9 +146,9 @@ const ContactPage = () => {
             <Image src={GlobalIcon} alt="Global Icon" />
             <div className="space-y-[16px]">
               <p className="  text-[24px] text-[#48484A]">
-                Find us on social media
+                Engage with us on social media
               </p>
-              <p className="  text-[16px] text-[#48484A]">
+              <p className="  text-[16px] text-[#48484A] hidden">
                 Engage with our community and keep your business at the
                 forefront.
               </p>
@@ -165,9 +168,12 @@ const ContactPage = () => {
                 {/* <Link href="http://x.com/umpirewave" target="blank">
                   <Image src={X} alt="X Icon" />
                 </Link> */}
-                {/* <Link href="https://www.youtube.com/@umpirewave" target="blank">
-                  <Image src={Youtube} alt="Twitter" />
-                </Link> */}
+                <Link
+                  href="https://youtube.com/@umpirewave?si=1cRjpXv-gbmIXEyu"
+                  target="blank"
+                >
+                  <Image src={Youtube} alt="Youtube" />
+                </Link>
                 <Link
                   href="https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1"
                   target="_blank"

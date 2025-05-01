@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useMemo, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
+import { BiPlayCircle } from "react-icons/bi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -27,6 +28,93 @@ const PortfolioItem: React.FC<Project> = ({
   image,
   url,
 }) => {
+  const [thumbnail, setThumbnail] = useState(image);
+  const [isYouTube, setIsYouTube] = useState(false);
+  const [videoId, setVideoId] = useState("");
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (url && (url.includes("youtube.com") || url.includes("youtu.be"))) {
+      setIsYouTube(true);
+
+      const videoIdMatch = url.match(
+        /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
+      );
+      const extractedVideoId = videoIdMatch ? videoIdMatch[1] : "";
+
+      if (extractedVideoId) {
+        setVideoId(extractedVideoId);
+        setThumbnail(
+          `https://img.youtube.com/vi/${extractedVideoId}/mqdefault.jpg`
+        );
+      }
+    }
+  }, [url, image]);
+
+  const toggleVideo = (e: any) => {
+    e.preventDefault();
+    setShowVideo(!showVideo);
+  };
+
+  if (isYouTube) {
+    return (
+      <div className="bg-white shadow rounded-md max-w-[400px] w-full overflow-hidden">
+        <div className="relative w-full pt-[56.25%] bg-gray-100">
+          {showVideo ? (
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+              title={title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <div
+              className="absolute inset-0 cursor-pointer"
+              onClick={toggleVideo}
+            >
+              {thumbnail ? (
+                <div className="relative w-full h-full">
+                  <img
+                    src={thumbnail}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-30 transition-opacity">
+                    <BiPlayCircle className="w-16 h-16 text-white opacity-90" />
+                  </div>
+                </div>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                  <BiPlayCircle className="w-12 h-12 text-gray-400" />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="p-4">
+          {!showVideo ? (
+            <button
+              onClick={toggleVideo}
+              className="mt-3 p-[10px] bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A] hover:bg-gray-200 transition-colors"
+            >
+              Play Video
+            </button>
+          ) : (
+            <button
+              onClick={toggleVideo}
+              className="mt-3 p-[10px] bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A] hover:bg-gray-200 transition-colors"
+            >
+              Close Video
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="p-[10px] bg-[#FFFFFF] shadow rounded-md max-w-[400px] w-full">
       <div className="flex gap-[16px]">
@@ -43,7 +131,8 @@ const PortfolioItem: React.FC<Project> = ({
           <p className="font-[400] text-[16px] text-[#48484A]">{artist}</p>
           <a
             href={url}
-            target="blank"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-[10px] bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A]"
           >
             Get it now
@@ -79,7 +168,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Audio",
       artist: "Don Omar, Lucenzo",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project2",
@@ -87,7 +176,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Video",
       artist: "Camila Cabello",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project3",
@@ -95,7 +184,7 @@ const PortFolio: React.FC = () => {
       fileType: "Documentary",
       artist: "David Attenborough",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://youtu.be/YCyLSWdoSxw?si=-W1aiaz7qtnomWzI",
     },
     {
       id: "project4",
@@ -103,7 +192,7 @@ const PortFolio: React.FC = () => {
       fileType: "Photography",
       artist: "Jane Doe",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project5",
@@ -127,7 +216,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Video",
       artist: "The Weeknd",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project8",
@@ -135,7 +224,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Audio",
       artist: "Billie Eilish",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project9",
@@ -143,7 +232,7 @@ const PortFolio: React.FC = () => {
       fileType: "Documentary",
       artist: "Marine Institute",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.youtube.com/watch?v=t_S_cN2re4g",
     },
     {
       id: "project10",
@@ -151,7 +240,7 @@ const PortFolio: React.FC = () => {
       fileType: "Photography",
       artist: "Robert Smith",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project11",
@@ -159,7 +248,7 @@ const PortFolio: React.FC = () => {
       fileType: "Artiste Campaign",
       artist: "Imagine Dragons",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project12",
@@ -167,7 +256,7 @@ const PortFolio: React.FC = () => {
       fileType: "Commercial",
       artist: "Luxury Brand",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project13",
@@ -175,7 +264,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Video",
       artist: "Lil Nas X",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project14",
@@ -183,7 +272,7 @@ const PortFolio: React.FC = () => {
       fileType: "Documentary",
       artist: "Environmental Network",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.youtube.com/watch?v=dcBXmj1nMTQ",
     },
     {
       id: "project15",
@@ -191,7 +280,7 @@ const PortFolio: React.FC = () => {
       fileType: "Photography",
       artist: "Nature Collective",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project16",
@@ -199,7 +288,7 @@ const PortFolio: React.FC = () => {
       fileType: "Artiste Campaign",
       artist: "Taylor Swift",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project17",
@@ -207,7 +296,7 @@ const PortFolio: React.FC = () => {
       fileType: "Commercial",
       artist: "Department Store",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project18",
@@ -215,7 +304,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Audio",
       artist: "Post Malone",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project19",
@@ -223,7 +312,7 @@ const PortFolio: React.FC = () => {
       fileType: "Photography",
       artist: "Sarah Johnson",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project20",
@@ -231,7 +320,7 @@ const PortFolio: React.FC = () => {
       fileType: "Commercial",
       artist: "Tech Company",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project21",
@@ -239,7 +328,7 @@ const PortFolio: React.FC = () => {
       fileType: "Artiste Campaign",
       artist: "Various Artists",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project22",
@@ -247,7 +336,7 @@ const PortFolio: React.FC = () => {
       fileType: "Documentary",
       artist: "Adventure Team",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.youtube.com/watch?v=Scxs7L0vhZ4",
     },
     {
       id: "project23",
@@ -255,7 +344,7 @@ const PortFolio: React.FC = () => {
       fileType: "Music Video",
       artist: "Dua Lipa",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.google.com",
     },
     {
       id: "project24",
@@ -263,7 +352,7 @@ const PortFolio: React.FC = () => {
       fileType: "Documentary",
       artist: "City Studios",
       image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
+      url: "https://www.youtube.com/watch?v=jG1SxuqIIg8",
     },
   ];
 

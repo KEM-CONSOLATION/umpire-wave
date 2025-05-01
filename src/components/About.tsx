@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Teams from "./Teams";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 const About = () => {
   useEffect(() => {
     AOS.init({
@@ -40,9 +41,11 @@ const About = () => {
             through the power of sound, vision, and influence.
           </p>
 
-          <p className=" font-[600] inline-block text-[16px] text-[#FFFFFF]  bg-[#E7BF44] rounded-[8px] py-[12px] px-[10px]">
-            Contact us now
-          </p>
+          <Link href="/contact">
+            <p className=" font-[600] inline-block text-[16px] text-[#FFFFFF]  bg-[#E7BF44] rounded-[8px] py-[12px] px-[10px]">
+              Contact us now
+            </p>
+          </Link>
         </div>
       </div>
 
