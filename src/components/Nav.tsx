@@ -28,7 +28,7 @@ const Nav = () => {
     <nav className=" max-w-6xl mx-auto w-full px-6 py-[27px] flex items-center justify-between bg-white z-50 ">
       <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
         <Image
-          src="/assets/umpirewave.svg"
+          src="/assets/umpireLogo.png"
           alt="Umpire Wave Logo"
           width={100}
           height={100}

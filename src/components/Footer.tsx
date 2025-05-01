@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import FooterIcon from "@assets/FooterIcon.svg";
-import WorkLogo from "@assets/UmpireLogo.svg";
+import WorkLogo from "@assets/umpireLogo.png";
 // import Twitter from "@assets/TwitterIcon.svg";
 import Facebook from "@assets/FaceB.svg";
 import Instagram from "@assets/insta.svg";
@@ -90,7 +90,11 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <Image src={WorkLogo} alt="Work & Shop Logo" />
+          <Image
+            src={WorkLogo}
+            alt="Work & Shop Logo"
+            className=" max-w-[200px] w-full"
+          />
         </div>
       </div>
     </div>
