@@ -51,6 +51,7 @@ const PortfolioItem: React.FC<Project> = ({
     }
   }, [url, image]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const toggleVideo = (e: any) => {
     e.preventDefault();
     setShowVideo(!showVideo);
