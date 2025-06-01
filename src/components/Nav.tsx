@@ -5,7 +5,14 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const sections = ["home", "about", "service", "portfolio", "contact"];
+const sections = [
+  "home",
+  "about",
+  "service",
+  "portfolio",
+  "risingstars",
+  "contact",
+];
 
 const Nav = () => {
   const pathname = usePathname();
@@ -48,7 +55,9 @@ const Nav = () => {
                 : "text-[#48484A] "
             }`}
           >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
+            {section === "risingstars"
+              ? "Rising Stars"
+              : section.charAt(0).toUpperCase() + section.slice(1)}
           </Link>
         ))}
       </div>

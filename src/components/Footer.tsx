@@ -20,6 +20,7 @@ const Footer = () => {
     { name: "About", id: "/about" },
     { name: "Service", id: "/service" },
     { name: "Portfolio", id: "/portfolio" },
+    { name: "Event", id: "/risingstars" },
     { name: "Contact", id: "/contact" },
   ];
 
@@ -94,6 +95,8 @@ const Footer = () => {
             src="/assets/umpireLogo.png"
             alt="Work & Shop Logo"
             className=" max-w-[200px] w-full"
+            width={200}
+            height={50}
           />
         </div>
       </div>
