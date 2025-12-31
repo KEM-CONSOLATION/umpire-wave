@@ -22,30 +22,30 @@ const Brands = () => {
       </div>
 
       <div className="brands-marquee">
-        <div className="space-x-[16px] flex items-center">
+        <div className="space-x-[32px] flex items-center">
           <Image
             src="/assets/brands.png"
             alt="Brand1"
-            width={100}
-            height={100}
+            width={180}
+            height={80}
             priority
-            className="object-contain w-full"
+            className="object-contain max-w-[180px] h-auto opacity-70 hover:opacity-100 transition-opacity"
           />
           <Image
             src="/assets/brands2.png"
             alt="Brand2"
-            width={100}
-            height={100}
+            width={180}
+            height={80}
             priority
-            className="object-contain w-full"
+            className="object-contain max-w-[180px] h-auto opacity-70 hover:opacity-100 transition-opacity"
           />
           <Image
             src="/assets/brands3.png"
             alt="Brand3"
-            width={100}
-            height={100}
+            width={180}
+            height={80}
             priority
-            className="object-contain w-full"
+            className="object-contain max-w-[180px] h-auto opacity-70 hover:opacity-100 transition-opacity"
           />
         </div>
       </div>

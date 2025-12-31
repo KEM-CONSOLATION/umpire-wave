@@ -44,13 +44,17 @@ const Teams = () => {
       once: true,
     });
   }, []);
+
+  // Duplicate team members for seamless infinite scroll
+  const duplicatedMembers = [...teamMembers, ...teamMembers, ...teamMembers];
+
   return (
-    <div className="px-4" data-aos="fade-up">
-      <div className="max-w-lg mx-auto text-center mt-16 mb-8">
-        <p className="font-semibold text-2xl text-gray-700">
+    <div className="px-4 py-16" data-aos="fade-up">
+      <div className="max-w-4xl mx-auto text-center mb-12">
+        <p className="font-semibold text-3xl md:text-4xl text-[#48484A] mb-4">
           The Wave Makers Behind the Scenes
         </p>
-        <p className="font-normal text-base text-gray-700 mt-2">
+        <p className="font-normal text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Our team is a blend of diverse talents—directors, producers,
           engineers, designers, marketers, and dreamers—all working together to
           push the boundaries of music, film, and visual art in Africa and
@@ -58,27 +62,31 @@ const Teams = () => {
         </p>
       </div>
 
-      <div className="mt-8 overflow-x-auto scrollbar-hidden ">
-        <div className="flex gap-6 min-w-max px-2">
-          {teamMembers.map((member, index) => (
+      <div className="relative overflow-hidden">
+        {/* Gradient overlays for fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none" />
+
+        <div className="flex gap-8 animate-scroll">
+          {duplicatedMembers.map((member, index) => (
             <div
-              key={index}
-              className="flex-shrink-0 space-y-4 max-w-[253px] w-full text-center"
+              key={`${member.name}-${index}`}
+              className="flex-shrink-0 space-y-4 w-[253px] text-center"
             >
-              <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto">
+              <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto shadow-lg ring-2 ring-gray-100 transition-transform duration-300 hover:scale-105">
                 <Image
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover"
-                  width={100}
-                  height={100}
+                  width={253}
+                  height={253}
                 />
               </div>
               <div>
                 <p className="font-semibold text-[16px] text-[#48484A]">
                   {member.name}
                 </p>
-                <p className="font-normal text-[12px] text-[#48484A]">
+                <p className="font-normal text-[12px] text-gray-600 mt-1">
                   {member.role}
                 </p>
               </div>

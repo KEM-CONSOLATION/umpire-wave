@@ -52,3 +52,20 @@ body {
     transform: translateX(-100%);
   }
 }
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-253px * 6 - 2rem * 6));
+  }
+}
+
+.animate-scroll {
+  animation: scroll-horizontal 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

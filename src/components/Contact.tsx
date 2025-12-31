@@ -16,6 +16,7 @@ import Tiktok from "@assets/TikTokIcon_.svg";
 import emailjs from "@emailjs/browser";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { contactEmails } from "@/config/email";
 interface FormData {
   first_name: string;
   last_name: string;
@@ -58,21 +59,32 @@ const ContactPage = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const templateParams = {
+      const baseTemplateParams = {
         name: `${data.first_name} ${data.last_name}`,
         email: data.email,
         message: data.description,
         subject: data.description.slice(0, 20),
+        to_email: contactEmails.all.join(","), // Include both emails
+        reply_to: data.email,
       };
 
-      const result = await emailjs.send(
-        "service_kk9enic",
-        "template_w35npys",
-        templateParams,
-        "M5loi_Mue6YL6n2Ce"
+      // Send emails to both addresses
+      const emailPromises = contactEmails.all.map((toEmail) =>
+        emailjs.send(
+          "service_kk9enic",
+          "template_w35npys",
+          {
+            ...baseTemplateParams,
+            to_email: toEmail,
+          },
+          "M5loi_Mue6YL6n2Ce"
+        )
       );
 
-      if (result.status === 200) {
+      const results = await Promise.all(emailPromises);
+      const allSuccessful = results.every((result) => result.status === 200);
+
+      if (allSuccessful) {
         setStatus({
           type: "success",
           message:
@@ -80,6 +92,8 @@ const ContactPage = () => {
         });
         reset();
         setCharCount(0);
+      } else {
+        throw new Error("Some emails failed to send");
       }
     } catch (error) {
       setStatus({
@@ -138,7 +152,7 @@ const ContactPage = () => {
               <p className="  text-[16px] text-[#48484A]">
                 Saturdays 10am - 5pm
               </p>
-              <p className="  text-[16px] text-[#48484A]">09121096797</p>
+              <p className="  text-[16px] text-[#48484A]">09167264063</p>
             </div>
           </div>
 
@@ -291,7 +305,7 @@ const ContactPage = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full   text-[16px] py-3 rounded-md transition ${
+              className={`w-full   cursor-pointer text-[16px] py-3 rounded-md transition ${
                 isSubmitting
                   ? "bg-gray-500 cursor-not-allowed"
                   : "bg-[#E7BF44]  text-white"

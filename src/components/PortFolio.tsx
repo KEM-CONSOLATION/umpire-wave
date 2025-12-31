@@ -99,14 +99,14 @@ const PortfolioItem: React.FC<Project> = ({
           {!showVideo ? (
             <button
               onClick={toggleVideo}
-              className="mt-3 p-[10px] bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A] hover:bg-gray-200 transition-colors"
+              className="mt-3 p-[10px] cursor-pointer bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A] hover:bg-gray-200 transition-colors"
             >
               Play Video
             </button>
           ) : (
             <button
               onClick={toggleVideo}
-              className="mt-3 p-[10px] bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A] hover:bg-gray-200 transition-colors"
+              className="mt-3 p-[10px] cursor-pointer bg-[#F5F6F7] inline-block rounded-[8px] font-[600] text-[12px] text-[#48484A] hover:bg-gray-200 transition-colors"
             >
               Close Video
             </button>
@@ -195,22 +195,8 @@ const PortFolio: React.FC = () => {
       image: "/assets/portfolioImage.png",
       url: "https://www.google.com",
     },
-    {
-      id: "project5",
-      title: "Global Tour",
-      fileType: "Artiste Campaign",
-      artist: "World Band",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
-    },
-    {
-      id: "project6",
-      title: "Summer Sale",
-      fileType: "Commercial",
-      artist: "Fashion Brand",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com/",
-    },
+
+   
     {
       id: "project7",
       title: "Blinding Lights",
@@ -243,22 +229,8 @@ const PortFolio: React.FC = () => {
       image: "/assets/portfolioImage.png",
       url: "https://www.google.com",
     },
-    {
-      id: "project11",
-      title: "Imagine Dragons Tour",
-      fileType: "Artiste Campaign",
-      artist: "Imagine Dragons",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project12",
-      title: "Holiday Collection",
-      fileType: "Commercial",
-      artist: "Luxury Brand",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
+   
+   
     {
       id: "project13",
       title: "Industry Baby",
@@ -283,22 +255,7 @@ const PortFolio: React.FC = () => {
       image: "/assets/portfolioImage.png",
       url: "https://www.google.com",
     },
-    {
-      id: "project16",
-      title: "Album Launch",
-      fileType: "Artiste Campaign",
-      artist: "Taylor Swift",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project17",
-      title: "Spring Promotion",
-      fileType: "Commercial",
-      artist: "Department Store",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
+    
     {
       id: "project18",
       title: "Circles",
@@ -315,22 +272,8 @@ const PortFolio: React.FC = () => {
       image: "/assets/portfolioImage.png",
       url: "https://www.google.com",
     },
-    {
-      id: "project20",
-      title: "New Technology",
-      fileType: "Commercial",
-      artist: "Tech Company",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project21",
-      title: "Concert Series",
-      fileType: "Artiste Campaign",
-      artist: "Various Artists",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
+    
+    
     {
       id: "project22",
       title: "Mountain Expedition",
@@ -378,16 +321,6 @@ const PortFolio: React.FC = () => {
       id: "photography",
       label: "Photography",
       projects: projects.filter((p) => p.fileType.includes("Photography")),
-    },
-    {
-      id: "artisteCampaigns",
-      label: "Artiste Campaigns",
-      projects: projects.filter((p) => p.fileType.includes("Artiste")),
-    },
-    {
-      id: "commercialsBrandedContent",
-      label: "Commercials & Branded Content",
-      projects: projects.filter((p) => p.fileType.includes("Commercial")),
     },
   ];
 
