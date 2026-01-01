@@ -185,30 +185,6 @@ const PortFolio: React.FC = () => {
   const projects: Project[] = useMemo(
     () => [
       {
-        id: "project1",
-        title: "Danza Kuduro",
-        fileType: "Music Audio",
-        artist: "Don Omar, Lucenzo",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
-        id: "project2",
-        title: "Havana",
-        fileType: "Music Video",
-        artist: "Camila Cabello",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
-        id: "project3",
-        title: "Life on Earth",
-        fileType: "Documentary",
-        artist: "David Attenborough",
-        image: "/assets/portfolioImage.png",
-        url: "https://youtu.be/YCyLSWdoSxw?si=-W1aiaz7qtnomWzI",
-      },
-      {
         id: "project4",
         title: "Photography 1",
         fileType: "Photography",
@@ -231,30 +207,6 @@ const PortFolio: React.FC = () => {
         artist: "Umpire Wave Studios",
         image: "/assets/Images/IMG_4208.jpeg",
         url: "#",
-      },
-      {
-        id: "project7",
-        title: "Blinding Lights",
-        fileType: "Music Video",
-        artist: "The Weeknd",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
-        id: "project8",
-        title: "Bad Guy",
-        fileType: "Music Audio",
-        artist: "Billie Eilish",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
-        id: "project9",
-        title: "Ocean Depths",
-        fileType: "Documentary",
-        artist: "Marine Institute",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.youtube.com/watch?v=t_S_cN2re4g",
       },
       {
         id: "project10",
@@ -281,22 +233,6 @@ const PortFolio: React.FC = () => {
         url: "#",
       },
       {
-        id: "project13",
-        title: "Industry Baby",
-        fileType: "Music Video",
-        artist: "Lil Nas X",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
-        id: "project14",
-        title: "Climate Change",
-        fileType: "Documentary",
-        artist: "Environmental Network",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.youtube.com/watch?v=dcBXmj1nMTQ",
-      },
-      {
         id: "project15",
         title: "Photography 7",
         fileType: "Photography",
@@ -321,14 +257,6 @@ const PortFolio: React.FC = () => {
         url: "#",
       },
       {
-        id: "project18",
-        title: "Circles",
-        fileType: "Music Audio",
-        artist: "Post Malone",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
         id: "project19",
         title: "Photography 10",
         fileType: "Photography",
@@ -345,30 +273,6 @@ const PortFolio: React.FC = () => {
         url: "#",
       },
 
-      {
-        id: "project22",
-        title: "Mountain Expedition",
-        fileType: "Documentary",
-        artist: "Adventure Team",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.youtube.com/watch?v=Scxs7L0vhZ4",
-      },
-      {
-        id: "project23",
-        title: "Levitating",
-        fileType: "Music Video",
-        artist: "Dua Lipa",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.google.com",
-      },
-      {
-        id: "project24",
-        title: "Urban Life",
-        fileType: "Documentary",
-        artist: "City Studios",
-        image: "/assets/portfolioImage.png",
-        url: "https://www.youtube.com/watch?v=jG1SxuqIIg8",
-      },
     ],
     []
   );
@@ -475,10 +379,31 @@ const PortFolio: React.FC = () => {
             />
           ))
         ) : (
-          <div className="col-span-full text-center py-8">
-            <p className="font-[500] text-[18px] text-[#48484A]">
-              No projects found matching &apos;{searchQuery}&apos;
-            </p>
+          <div className="col-span-full text-center py-12 md:py-16">
+            {searchQuery.trim() ? (
+              <p className="font-[500] text-[18px] text-[#48484A]">
+                No projects found matching &apos;{searchQuery}&apos;
+              </p>
+            ) : (
+              <div className="space-y-3">
+                <p className="font-[600] text-[24px] text-[#48484A]">
+                  {activeTab === "musicVideos" && "No Music Videos Available"}
+                  {activeTab === "filmDocumentaries" && "No Films & Documentaries Available"}
+                  {activeTab === "all" && "No Projects Available"}
+                  {activeTab === "photography" && "No Photography Available"}
+                </p>
+                <p className="font-[400] text-[16px] text-gray-600 max-w-md mx-auto">
+                  {activeTab === "musicVideos" &&
+                    "We're working on exciting music video projects. Check back soon for updates!"}
+                  {activeTab === "filmDocumentaries" &&
+                    "We're currently working on new films and documentaries. Stay tuned for our upcoming releases!"}
+                  {activeTab === "all" &&
+                    "No projects are currently available. Please check back later."}
+                  {activeTab === "photography" &&
+                    "No photography available at the moment."}
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>
