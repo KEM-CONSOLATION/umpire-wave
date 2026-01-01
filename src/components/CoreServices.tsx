@@ -54,7 +54,10 @@ const FlipCard: React.FC<FlipCardProps> = ({
             src={imageSrc}
             alt="Service"
             className="w-full h-full object-cover rounded-lg"
-            layout="fill"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={90}
+            loading="lazy"
           />
         </div>
 
@@ -231,9 +234,12 @@ const CoreServices: React.FC = () => {
     });
   }, []);
   return (
-    <div className="max-w-7xl mx-auto" data-aos="fade-up">
+    <div
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20"
+      data-aos="fade-up"
+    >
       <CSSOverrides />
-      <div className="max-w-lg mx-auto text-center mt-16 mb-8">
+      <div className="max-w-lg mx-auto text-center mb-8">
         <p className="font-semibold text-2xl text-gray-700">
           {/* Our Core Services */}
           Where Creativity Meets Impact
@@ -263,6 +269,7 @@ const CoreServices: React.FC = () => {
           </div>
         ))}
       </div>
+      <div className="mb-8"></div>
     </div>
   );
 };

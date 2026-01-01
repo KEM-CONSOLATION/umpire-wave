@@ -32,7 +32,7 @@ const NotFound = () => {
 
         <button
           onClick={() => router.push("/")}
-          className="px-6 py-2 bg-[#E7BF44] text-white rounded hover:bg-[#d4aa36] transition cursor-pointer"
+          className="px-6 py-2  bg-[#E7BF44] text-white rounded hover:bg-[#d4aa36] transition cursor-pointer"
         >
           Go Back Home
         </button>

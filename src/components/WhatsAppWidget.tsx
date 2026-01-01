@@ -1,36 +1,32 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { siteConfig } from '@/config/site'
-import { useAuth } from '@/lib/hooks/useAuth'
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { siteConfig } from "@/config/site";
 
 interface WhatsAppWidgetProps {
-  phoneNumber?: string
-  message?: string
+  phoneNumber?: string;
+  message?: string;
 }
 
-export default function WhatsAppWidget({ phoneNumber, message }: WhatsAppWidgetProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const { isAuthenticated } = useAuth()
-  const defaultPhoneNumber = phoneNumber || siteConfig.whatsappNumber
+export default function WhatsAppWidget({
+  phoneNumber,
+  message,
+}: WhatsAppWidgetProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const defaultPhoneNumber = phoneNumber || siteConfig.whatsappNumber;
 
-  // Different messages for authenticated vs non-authenticated users
   const defaultMessage =
-    message ||
-    (isAuthenticated
-      ? 'Hello! I need help with my Umpire Wave account.'
-      : "Hello! I'd like to know more about Umpire Wave.")
+    message || "Hello! I'd like to know more about Umpire Wave.";
 
-  const chatMessage = isAuthenticated
-    ? "Hi! 👋 Need help with Umpire Wave? We're here to assist you with any questions or issues you might have!"
-    : "Hi! 👋 Have questions about Umpire Wave? Let's chat about how we can help bring your creative visions to life!"
+  const chatMessage =
+    "Hi! 👋 Have questions about Umpire Wave? Let's chat about how we can help bring your creative visions to life!";
 
   const handleWhatsAppClick = () => {
-    const encodedMessage = encodeURIComponent(defaultMessage)
-    const whatsappUrl = `https://wa.me/${defaultPhoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`
-    window.open(whatsappUrl, '_blank')
-  }
+    const encodedMessage = encodeURIComponent(defaultMessage);
+    const whatsappUrl = `https://wa.me/${defaultPhoneNumber.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <div className="fixed right-6 bottom-6 z-50">
@@ -46,17 +42,13 @@ export default function WhatsAppWidget({ phoneNumber, message }: WhatsAppWidgetP
               <span className="text-lg text-white">💼</span>
             </div>
             <div>
-              <p
-                className="text-sm font-bold text-gray-800"
-              >
+              <p className="text-sm font-bold text-gray-800">
                 {siteConfig.name}
               </p>
               <p className="text-xs text-[#25D366]">Online now</p>
             </div>
           </div>
-          <p className="mb-3 text-sm text-gray-600">
-            {chatMessage}
-          </p>
+          <p className="mb-3 text-sm text-gray-600">{chatMessage}</p>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -79,7 +71,7 @@ export default function WhatsAppWidget({ phoneNumber, message }: WhatsAppWidgetP
         transition={{
           duration: 2,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
         aria-label="Open WhatsApp chat"
       >
@@ -95,12 +87,12 @@ export default function WhatsAppWidget({ phoneNumber, message }: WhatsAppWidgetP
           transition={{
             duration: 1.5,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
         >
           <span className="text-xs text-white">!</span>
         </motion.div>
       </motion.button>
     </div>
-  )
+  );
 }

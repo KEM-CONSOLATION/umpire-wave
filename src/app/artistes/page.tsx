@@ -7,6 +7,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { createSlug } from "@/lib/utils";
 
 export default function ArtistesPage() {
   useEffect(() => {
@@ -17,37 +19,26 @@ export default function ArtistesPage() {
     });
   }, []);
 
-  // Placeholder data - replace with actual artiste data
   const artistes = [
     {
       id: 1,
-      name: "Artiste Name 1",
-      image: "/assets/team.png",
+      name: "B-Girl",
+      image: "/assets/Artiste/B-GIRL.jpg",
     },
     {
       id: 2,
-      name: "Artiste Name 2",
-      image: "/assets/team.png",
+      name: "Izik Brown",
+      image: "/assets/Artiste/IZIK BROWN.jpeg",
     },
     {
       id: 3,
-      name: "Artiste Name 3",
-      image: "/assets/team.png",
+      name: "RJ Buchi",
+      image: "/assets/Artiste/RJ BUCHI.jpg",
     },
     {
       id: 4,
-      name: "Artiste Name 4",
-      image: "/assets/team.png",
-    },
-    {
-      id: 5,
-      name: "Artiste Name 5",
-      image: "/assets/team.png",
-    },
-    {
-      id: 6,
-      name: "Artiste Name 6",
-      image: "/assets/team.png",
+      name: "Vee Ofum",
+      image: "/assets/Artiste/VEE OFUM.jpg",
     },
   ];
 
@@ -76,27 +67,33 @@ export default function ArtistesPage() {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8">
-          {artistes.map((artiste, index) => (
-            <div
-              key={artiste.id}
-              className="flex flex-col items-center text-center space-y-4 group"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200 shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                <Image
-                  src={artiste.image}
-                  alt={artiste.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 128px, 160px"
-                />
-              </div>
-              <h3 className="font-semibold text-base md:text-lg text-[#48484A] group-hover:text-[#E7BF44] transition-colors">
-                {artiste.name}
-              </h3>
-            </div>
-          ))}
+          {artistes.map((artiste, index) => {
+            const slug = createSlug(artiste.name);
+            return (
+              <Link
+                key={artiste.id}
+                href={`/artistes/${slug}`}
+                className="flex flex-col items-center text-center space-y-4 group cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200 shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                  <Image
+                    src={artiste.image}
+                    alt={artiste.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 128px, 160px"
+                    quality={90}
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="font-semibold text-base md:text-lg text-[#48484A] group-hover:text-[#E7BF44] transition-colors">
+                  {artiste.name}
+                </h3>
+              </Link>
+            );
+          })}
         </div>
       </div>
 

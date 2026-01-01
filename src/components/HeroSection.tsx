@@ -1,182 +1,154 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const HeroSection = () => {
-  return (
-    <div className="max-w-7xl mx-[10px] 2xl:mx-auto">
-      <div className="flex items-center gap-[16px]">
-        <div className="flex flex-col gap-4 hidden lg:block">
-          <Link
-            href="https://www.facebook.com/share/1DX7QdVcRs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-110 cursor-pointer"
-          >
-            <Image
-              src="/assets/facebook.svg"
-              alt="Facebook"
-              width={40}
-              height={40}
-              priority
-              className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-          </Link>
-          <Link
-            href="https://www.instagram.com/_umpirewavestudio?igsh=YzljYTk1ODg3Zg=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-110 cursor-pointer"
-          >
-            <Image
-              src="/assets/instagram.svg"
-              alt="Instagram"
-              width={40}
-              height={40}
-              priority
-              className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-          </Link>
-          <Link
-            href="https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-110 cursor-pointer"
-          >
-            <Image
-              src="/assets/tiktok.svg"
-              alt="TikTok"
-              width={40}
-              height={40}
-              priority
-              className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-          </Link>
-          <Link
-            href="https://youtube.com/@umpirewave?si=1cRjpXv-gbmIXEyu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-110 cursor-pointer"
-          >
-            <Image
-              src="/assets/youtube.svg"
-              alt="YouTube"
-              width={40}
-              height={40}
-              priority
-              className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-          </Link>
-        </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-        <div
-          className="flex-1 rounded-2xl relative h-full pb-[22px] lg:pb-[42px] pt-[20px] lg:pt-[86px] px-[10px] lg:px-[64px] bg-cover bg-center bg-no-repeat overflow-hidden"
-          style={{ backgroundImage: "url('/assets/hero.png')" }}
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 relative min-h-[600px] flex items-center justify-center">
+      {/* Social Media Links - Absolute Positioning */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="hidden xl:flex flex-col gap-6 absolute left-6 top-1/2 -translate-y-1/2 z-20"
+      >
+        {[
+          { id: "facebook", url: "https://www.facebook.com/share/1DX7QdVcRs" },
+          {
+            id: "instagram",
+            url: "https://www.instagram.com/_umpirewavestudio?igsh=YzljYTk1ODg3Zg==",
+          },
+          {
+            id: "tiktok",
+            url: "https://www.tiktok.com/@umpire.wave.studi?_t=ZM-8vkUn3N4esX&_r=1",
+          },
+          {
+            id: "youtube",
+            url: "https://youtube.com/@umpirewave?si=1cRjpXv-gbmIXEyu",
+          },
+        ].map((social) => (
+          <Link
+            key={social.id}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-all hover:scale-120 cursor-pointer p-2 rounded-full bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/5"
+          >
+            <Image
+              src={`/assets/${social.id}.svg`}
+              alt={social.id}
+              width={24}
+              height={24}
+              className="object-contain opacity-70 hover:opacity-100 transition-all filter grayscale hover:grayscale-0"
+            />
+          </Link>
+        ))}
+      </motion.div>
+
+      {/* Hero Image Card - Centered */}
+      <div
+        className="w-full rounded-[40px] relative min-h-[500px] lg:min-h-[700px] flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden group shadow-2xl"
+        style={{ backgroundImage: "url('/assets/hero.png')" }}
+      >
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-black/45 group-hover:bg-black/40 transition-colors duration-700 pointer-events-none"></div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 w-full px-6 lg:px-12"
         >
-          {/* Subtle overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 pointer-events-none"></div>
-          <div className="relative z-10">
-          <div className="max-w-[541px] mt-[84px] space-y-[24px] mx-auto text-center">
-            <h1 className="font-[600] text-[20px] lg:text-[40px] text-[#E7BF44] leading-tight">
-              Umpire Wave Studios
-            </h1>
-            <p className="font-[700] text-[12px] lg:text-[16px] text-[#FFFFFF] tracking-wider uppercase">
+          <div className="max-w-[800px] space-y-[40px] mx-auto text-center">
+            <motion.h1
+              variants={itemVariants}
+              className="font-bold text-[32px] md:text-[56px] lg:text-[72px] text-white leading-[1.1] filter drop-shadow-2xl"
+            >
+              Umpire Wave <span className="text-[#E7BF44]">Studios</span>
+            </motion.h1>
+
+            <motion.p
+              variants={itemVariants}
+              className="font-semibold text-[14px] lg:text-[18px] text-[#E7BF44] tracking-[0.3em] uppercase"
+            >
               Sound. Vision. Influence.
-            </p>
-            <p className="font-[400] text-[16px] lg:text-[20px] text-[#FFFFFF] leading-relaxed opacity-95">
+            </motion.p>
+
+            <motion.p
+              variants={itemVariants}
+              className="font-light text-[18px] lg:text-[24px] text-white/90 leading-relaxed max-w-2xl mx-auto"
+            >
               Nigeria&apos;s multimedia powerhouse redefining creativity across
               music, film, and visual arts.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
+            >
               <Link href="/service" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto min-w-[175px] font-[600] text-[16px] text-[#48484A] py-[12px] px-[24px] bg-[#E7BF44] rounded-[8px] hover:bg-[#D4A93A] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer">
+                <button className="w-full sm:w-auto min-w-[200px] font-bold text-[16px] text-[#1c1c1e] py-[18px] px-[36px] bg-[#E7BF44] rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-[0_10px_30px_rgba(231,191,68,0.3)] cursor-pointer">
                   Explore Our Services
                 </button>
               </Link>
               <Link href="/contact" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto min-w-[120px] font-[600] text-[16px] text-[#FFFFFF] py-[12px] px-[24px] border-2 border-[#E7BF44] rounded-[8px] hover:bg-[#E7BF44]/10 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <button className="w-full sm:w-auto min-w-[170px] font-bold text-[16px] text-white py-[18px] px-[36px] border border-white/30 rounded-full hover:border-[#E7BF44] hover:bg-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer backdrop-blur-md">
                   Get In Touch
                 </button>
               </Link>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="hidden md:flex items-center justify-end brands-marquee w-[500px] brands-marquee">
-            <div className="flex items-center space-x-3">
-              <Image
-                src="/assets/artisteManagement.jpg"
-                alt="Artiste Management"
-                width={100}
-                height={100}
-                priority
-                className="object-cover max-w-[100px] h-[100px] w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              />
-              <Image
-                src="/assets/eventCoverage.jpg"
-                alt="Event Coverage"
-                width={100}
-                height={100}
-                priority
-                className="object-cover max-w-[100px] h-[100px] w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              />
-              <Image
-                src="/assets/musicProduction.jpg"
-                alt="Music Production"
-                width={100}
-                height={100}
-                priority
-                className="object-cover max-w-[100px] h-[100px] w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              />
-              <Image
-                src="/assets/photography.jpg"
-                alt="Photography"
-                width={100}
-                height={100}
-                priority
-                className="object-cover max-w-[100px] h-[100px] w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              />
-              <Image
-                src="/assets/studioRecording.jpg"
-                alt="Studio Recording"
-                width={100}
-                height={100}
-                priority
-                className="object-cover max-w-[100px] h-[100px] w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              />
-              <Image
-                src="/assets/studioRentals.jpg"
-                alt="Studio Rentals"
-                width={100}
-                height={100}
-                priority
-                className="object-cover max-w-[100px] h-[100px] w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              />
+          <div className="hidden lg:flex items-center justify-center mt-20">
+            <div className="flex items-center gap-6 p-4 rounded-3xl bg-black/20 backdrop-blur-xl border border-white/10">
+              {[
+                "artisteManagement",
+                "eventCoverage",
+                "musicProduction",
+                "photography",
+                "studioRecording",
+                "studioRentals",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="relative group/brand overflow-hidden rounded-xl"
+                >
+                  <Image
+                    src={`/assets/${item}.jpg`}
+                    alt={item}
+                    width={80}
+                    height={80}
+                    className="object-cover w-16 h-16 transition-all duration-500 group-hover/brand:scale-125 opacity-80 group-hover/brand:opacity-100"
+                  />
+                </div>
+              ))}
             </div>
           </div>
-          </div>
-        </div>
-
-        <div
-          className="hidden lg:block cursor-pointer transition-transform hover:scale-110"
-          onClick={() =>
-            window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: "smooth",
-            })
-          }
-          aria-label="Scroll down"
-        >
-          <Image
-            src="/assets/scrollDown.png"
-            alt="Scroll Down"
-            width={50}
-            height={50}
-            priority
-            className="object-contain w-full animate-bounce"
-          />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

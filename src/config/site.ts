@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Umpire Wave Studios",
   whatsappNumber: "2349167264063",
-  description: "Sound. Vision. Influence. A culture-driven multimedia powerhouse redefining African creativity.",
+  description:
+    "Sound. Vision. Influence. A culture-driven multimedia powerhouse redefining African creativity.",
   url: "https://umpirewave.com",
   ogImage: "/assets/umpireLogo.PNG",
   keywords: [

@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large image files
+*.NEF
+*.nef
+*.HEIC
+*.heic
+*.psd
+*.PSD
+
+# Large media files
+*.mov
+*.MOV
+*.mp4
+*.MP4

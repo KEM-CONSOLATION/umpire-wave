@@ -5,6 +5,9 @@ import Nav from "@/components/Nav";
 import CoreServices from "@/components/CoreServices";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import FeaturedWork from "@/components/FeaturedWork";
+import Stats from "@/components/Stats";
+import FeaturedTalent from "@/components/FeaturedTalent";
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
       <Nav />
       <HeroSection />
       <CoreServices />
+      <Stats />
+      <FeaturedWork />
+      <FeaturedTalent />
       <Brands />
       <Footer />
     </div>

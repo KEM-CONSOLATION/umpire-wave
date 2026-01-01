@@ -18,9 +18,7 @@ export function generateMetadata({
   type = "website",
   noIndex = false,
 }: GenerateMetadataParams = {}): Metadata {
-  const pageTitle = title
-    ? `${title} | ${siteConfig.name}`
-    : siteConfig.name;
+  const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
   const pageDescription = description || siteConfig.description;
   const pageUrl = `${siteConfig.url}${path}`;
   const ogImageUrl = `${siteConfig.url}${image}`;
@@ -32,7 +30,7 @@ export function generateMetadata({
       template: `%s | ${siteConfig.name}`,
     },
     description: pageDescription,
-    keywords: siteConfig.keywords,
+    keywords: [...siteConfig.keywords],
     authors: [{ name: siteConfig.author }],
     creator: siteConfig.creator,
     publisher: siteConfig.publisher,
@@ -75,9 +73,8 @@ export function generateMetadata({
       canonical: pageUrl,
     },
     verification: {
-      // Add your verification codes here when available
-      // google: "your-google-verification-code",
-      // yandex: "your-yandex-verification-code",
+      google: "0000000000000000000000000000000000000000",
+      yandex: "0000000000000000000000000000000000000000",
     },
   };
 }

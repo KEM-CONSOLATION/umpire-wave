@@ -13,10 +13,12 @@ const jost = Jost({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = generateMetadata({
-  title: siteConfig.name,
-  description: siteConfig.description,
-});
+export const metadata: Metadata = {
+  ...generateMetadata({
+    title: siteConfig.name,
+    description: siteConfig.description,
+  }),
+};
 
 export default function RootLayout({
   children,
@@ -26,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
+        <link rel="icon" href="/Umpire-Wave-FavIcon.svg" type="image/svg+xml" />
         <link rel="canonical" href={siteConfig.url} />
         <meta name="theme-color" content="#E7BF44" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -42,6 +42,8 @@ const Footer = () => {
             alt="Scroll to top"
             width={50}
             height={50}
+            sizes="56px"
+            quality={90}
             className="w-12 h-12 md:w-14 md:h-14"
           />
         </div>
@@ -57,6 +59,9 @@ const Footer = () => {
                   alt="Umpire Wave Studios Logo"
                   width={180}
                   height={45}
+                  sizes="180px"
+                  quality={90}
+                  loading="lazy"
                   className="max-w-[180px] h-auto"
                 />
               </Link>
@@ -106,6 +111,9 @@ const Footer = () => {
                     alt="Facebook"
                     width={24}
                     height={24}
+                    sizes="24px"
+                    quality={90}
+                    loading="lazy"
                     className="w-6 h-6 opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </Link>
@@ -121,6 +129,9 @@ const Footer = () => {
                     alt="YouTube"
                     width={24}
                     height={24}
+                    sizes="24px"
+                    quality={90}
+                    loading="lazy"
                     className="w-6 h-6 opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </Link>
@@ -136,6 +147,9 @@ const Footer = () => {
                     alt="TikTok"
                     width={24}
                     height={24}
+                    sizes="24px"
+                    quality={90}
+                    loading="lazy"
                     className="w-6 h-6 opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </Link>
@@ -151,6 +165,9 @@ const Footer = () => {
                     alt="Instagram"
                     width={24}
                     height={24}
+                    sizes="24px"
+                    quality={90}
+                    loading="lazy"
                     className="w-6 h-6 opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </Link>

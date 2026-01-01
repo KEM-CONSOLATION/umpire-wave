@@ -7,6 +7,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { createSlug } from "@/lib/utils";
 
 export default function ActorsPage() {
   useEffect(() => {
@@ -17,37 +19,26 @@ export default function ActorsPage() {
     });
   }, []);
 
-  // Placeholder data - replace with actual actor data
   const actors = [
     {
       id: 1,
-      name: "Actor Name 1",
-      image: "/assets/team.png",
+      name: "Clever Dickson",
+      image: "/assets/actors/CLEVER DICKSON.jpg",
     },
     {
       id: 2,
-      name: "Actor Name 2",
-      image: "/assets/team.png",
+      name: "Emmanuel Nemere",
+      image: "/assets/actors/EMMANUEL NEMERE.jpeg",
     },
     {
       id: 3,
-      name: "Actor Name 3",
-      image: "/assets/team.png",
+      name: "Mimi",
+      image: "/assets/actors/MIMI.jpg",
     },
     {
       id: 4,
-      name: "Actor Name 4",
-      image: "/assets/team.png",
-    },
-    {
-      id: 5,
-      name: "Actor Name 5",
-      image: "/assets/team.png",
-    },
-    {
-      id: 6,
-      name: "Actor Name 6",
-      image: "/assets/team.png",
+      name: "Queeneth Bassey",
+      image: "/assets/actors/QUEENETH BASSEY.jpeg",
     },
   ];
 
@@ -70,33 +61,39 @@ export default function ActorsPage() {
             Our Actors
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the talented actors who bring stories to life on screen with
-            their exceptional performances and dedication to the craft.
+            Discover the talented actors who bring stories to life on screen
+            with their exceptional performances and dedication to the craft.
           </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8">
-          {actors.map((actor, index) => (
-            <div
-              key={actor.id}
-              className="flex flex-col items-center text-center space-y-4 group"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200 shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                <Image
-                  src={actor.image}
-                  alt={actor.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 128px, 160px"
-                />
-              </div>
-              <h3 className="font-semibold text-base md:text-lg text-[#48484A] group-hover:text-[#E7BF44] transition-colors">
-                {actor.name}
-              </h3>
-            </div>
-          ))}
+          {actors.map((actor, index) => {
+            const slug = createSlug(actor.name);
+            return (
+              <Link
+                key={actor.id}
+                href={`/actors/${slug}`}
+                className="flex flex-col items-center text-center space-y-4 group cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200 shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                  <Image
+                    src={actor.image}
+                    alt={actor.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 128px, 160px"
+                    quality={90}
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="font-semibold text-base md:text-lg text-[#48484A] group-hover:text-[#E7BF44] transition-colors">
+                  {actor.name}
+                </h3>
+              </Link>
+            );
+          })}
         </div>
       </div>
 

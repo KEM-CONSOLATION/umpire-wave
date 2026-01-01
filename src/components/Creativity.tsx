@@ -29,118 +29,75 @@ const Creativity = () => {
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px] place-items-center"
         data-aos="fade-up"
       >
-        {/* <div className="space-y-[16px]">
-          <Image
-            src="/assets/image1.png"
-            alt="Image1"
-            width={400}
-            height={410}
-            priority
-            className="object-contain max-w-[400px] w-full h-[410px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-          <Image
-            src="/assets/image4.png"
-            alt="Image4"
-            width={400}
-            height={240}
-            priority
-            className="object-contain max-w-[400px] w-full h-[240px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-        </div>
-        <div className="space-y-[16px]">
-          <Image
-            src="/assets/image2.png"
-            alt="Image2"
-            width={400}
-            height={324}
-            priority
-            className="object-contain max-w-[400px] w-full h-[324px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-          <Image
-            src="/assets/image5.png"
-            alt="Image5"
-            width={400}
-            height={324}
-            priority
-            className="object-contain max-w-[400px] w-full h-[324px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-        </div>
-        <div className="space-y-[16px]">
-          <Image
-            src="/assets/image3.png"
-            alt="Image3"
-            width={400}
-            height={240}
-            priority
-            className="object-contain max-w-[400px] w-full h-[240px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-          <Image
-            src="/assets/image6.png"
-            alt="Image6"
-            width={400}
-            height={410}
-            priority
-            className="object-contain max-w-[400px] w-full h-[410px] transform transition duration-300 ease-in-out hover:scale-105"
-          />
-        </div> */}
-
-        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
           <Image
             src="/assets/artisteManagement.jpg"
             alt="Artiste Management"
             width={400}
             height={410}
-            priority
+            sizes="400px"
+            quality={90}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
-        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
           <Image
             src="/assets/eventCoverage.jpg"
-            alt="Artiste Management"
+            alt="Event Coverage"
             width={400}
             height={410}
-            priority
+            sizes="400px"
+            quality={90}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
-        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
           <Image
             src="/assets/musicProduction.jpg"
-            alt="Artiste Management"
+            alt="Music Production"
             width={400}
             height={410}
-            priority
+            sizes="400px"
+            quality={90}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
-        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
           <Image
             src="/assets/photography.jpg"
-            alt="Artiste Management"
+            alt="Photography"
             width={400}
             height={410}
-            priority
+            sizes="400px"
+            quality={90}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
-        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
           <Image
             src="/assets/studioRecording.jpg"
-            alt="Artiste Management"
+            alt="Studio Recording"
             width={400}
             height={410}
-            priority
+            sizes="400px"
+            quality={90}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
-        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden bg-red-500">
+        <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
           <Image
             src="/assets/studioRentals.jpg"
-            alt="Artiste Management"
+            alt="Studio Rentals"
             width={400}
             height={410}
-            priority
+            sizes="400px"
+            quality={90}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>

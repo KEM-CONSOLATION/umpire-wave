@@ -46,12 +46,14 @@ const About = () => {
           <div className="order-2 lg:order-1" data-aos="fade-right">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/assets/About1.svg"
+                src="/assets/Images/IMG_4206.jpeg"
                 alt="Umpire Wave Studios"
                 width={617}
                 height={600}
                 className="object-cover w-full h-auto"
                 priority
+                sizes="(max-width: 1024px) 100vw, 617px"
+                quality={90}
               />
             </div>
           </div>
@@ -118,13 +120,19 @@ const About = () => {
               ))}
             </div>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-left">
+          <div
+            className="relative rounded-2xl overflow-hidden shadow-2xl"
+            data-aos="fade-left"
+          >
             <Image
-              src="/assets/About2.svg"
+              src="/assets/Images/IMG_4207.jpeg"
               alt="Core Values"
               width={617}
               height={600}
               className="object-cover w-full h-auto"
+              sizes="(max-width: 1024px) 100vw, 617px"
+              quality={90}
+              loading="lazy"
             />
           </div>
         </div>

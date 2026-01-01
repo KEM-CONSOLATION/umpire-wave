@@ -51,8 +51,7 @@ const PortfolioItem: React.FC<Project> = ({
     }
   }, [url, image]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const toggleVideo = (e: any) => {
+  const toggleVideo = (e: React.MouseEvent) => {
     e.preventDefault();
     setShowVideo(!showVideo);
   };
@@ -77,10 +76,12 @@ const PortfolioItem: React.FC<Project> = ({
             >
               {thumbnail ? (
                 <div className="relative w-full h-full">
-                  <img
+                  <Image
                     src={thumbnail}
                     alt={title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-30 transition-opacity">
                     <BiPlayCircle className="w-16 h-16 text-white opacity-90" />
@@ -116,6 +117,22 @@ const PortfolioItem: React.FC<Project> = ({
     );
   }
 
+  if (fileType === "Photography") {
+    return (
+      <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+        <Image
+          src={image}
+          fill
+          alt={title}
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={90}
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="p-[10px] bg-[#FFFFFF] shadow rounded-md max-w-[400px] w-full">
       <div className="flex gap-[16px]">
@@ -124,7 +141,10 @@ const PortfolioItem: React.FC<Project> = ({
           width={100}
           height={100}
           alt={title}
-          className="max-w-[117px] w-full h-full"
+          className="max-w-[117px] w-full h-full object-cover"
+          sizes="117px"
+          quality={90}
+          loading="lazy"
         />
         <div className="space-y-[8px]">
           <p className="font-[600] text-[24px] text-[#48484A]">{title}</p>
@@ -162,167 +182,222 @@ const PortFolio: React.FC = () => {
     setSearchQuery(e.target.value);
   };
 
-  const projects: Project[] = [
-    {
-      id: "project1",
-      title: "Danza Kuduro",
-      fileType: "Music Audio",
-      artist: "Don Omar, Lucenzo",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project2",
-      title: "Havana",
-      fileType: "Music Video",
-      artist: "Camila Cabello",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project3",
-      title: "Life on Earth",
-      fileType: "Documentary",
-      artist: "David Attenborough",
-      image: "/assets/portfolioImage.png",
-      url: "https://youtu.be/YCyLSWdoSxw?si=-W1aiaz7qtnomWzI",
-    },
-    {
-      id: "project4",
-      title: "City Lights",
-      fileType: "Photography",
-      artist: "Jane Doe",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
+  const projects: Project[] = useMemo(
+    () => [
+      {
+        id: "project1",
+        title: "Danza Kuduro",
+        fileType: "Music Audio",
+        artist: "Don Omar, Lucenzo",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project2",
+        title: "Havana",
+        fileType: "Music Video",
+        artist: "Camila Cabello",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project3",
+        title: "Life on Earth",
+        fileType: "Documentary",
+        artist: "David Attenborough",
+        image: "/assets/portfolioImage.png",
+        url: "https://youtu.be/YCyLSWdoSxw?si=-W1aiaz7qtnomWzI",
+      },
+      {
+        id: "project4",
+        title: "Photography 1",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4206.jpeg",
+        url: "#",
+      },
+      {
+        id: "project5",
+        title: "Photography 2",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4207.jpeg",
+        url: "#",
+      },
+      {
+        id: "project6",
+        title: "Photography 3",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4208.jpeg",
+        url: "#",
+      },
+      {
+        id: "project7",
+        title: "Blinding Lights",
+        fileType: "Music Video",
+        artist: "The Weeknd",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project8",
+        title: "Bad Guy",
+        fileType: "Music Audio",
+        artist: "Billie Eilish",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project9",
+        title: "Ocean Depths",
+        fileType: "Documentary",
+        artist: "Marine Institute",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.youtube.com/watch?v=t_S_cN2re4g",
+      },
+      {
+        id: "project10",
+        title: "Photography 4",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4209.jpeg",
+        url: "#",
+      },
+      {
+        id: "project11",
+        title: "Photography 5",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4210.jpeg",
+        url: "#",
+      },
+      {
+        id: "project12",
+        title: "Photography 6",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4211.jpeg",
+        url: "#",
+      },
+      {
+        id: "project13",
+        title: "Industry Baby",
+        fileType: "Music Video",
+        artist: "Lil Nas X",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project14",
+        title: "Climate Change",
+        fileType: "Documentary",
+        artist: "Environmental Network",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.youtube.com/watch?v=dcBXmj1nMTQ",
+      },
+      {
+        id: "project15",
+        title: "Photography 7",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4212.jpeg",
+        url: "#",
+      },
+      {
+        id: "project16",
+        title: "Photography 8",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4213.jpeg",
+        url: "#",
+      },
+      {
+        id: "project17",
+        title: "Photography 9",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4214.jpeg",
+        url: "#",
+      },
+      {
+        id: "project18",
+        title: "Circles",
+        fileType: "Music Audio",
+        artist: "Post Malone",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project19",
+        title: "Photography 10",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4215.jpeg",
+        url: "#",
+      },
+      {
+        id: "project20",
+        title: "Photography 11",
+        fileType: "Photography",
+        artist: "Umpire Wave Studios",
+        image: "/assets/Images/IMG_4216.jpeg",
+        url: "#",
+      },
 
-   
-    {
-      id: "project7",
-      title: "Blinding Lights",
-      fileType: "Music Video",
-      artist: "The Weeknd",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project8",
-      title: "Bad Guy",
-      fileType: "Music Audio",
-      artist: "Billie Eilish",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project9",
-      title: "Ocean Depths",
-      fileType: "Documentary",
-      artist: "Marine Institute",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.youtube.com/watch?v=t_S_cN2re4g",
-    },
-    {
-      id: "project10",
-      title: "Urban Architecture",
-      fileType: "Photography",
-      artist: "Robert Smith",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-   
-   
-    {
-      id: "project13",
-      title: "Industry Baby",
-      fileType: "Music Video",
-      artist: "Lil Nas X",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project14",
-      title: "Climate Change",
-      fileType: "Documentary",
-      artist: "Environmental Network",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.youtube.com/watch?v=dcBXmj1nMTQ",
-    },
-    {
-      id: "project15",
-      title: "Wildlife Moments",
-      fileType: "Photography",
-      artist: "Nature Collective",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    
-    {
-      id: "project18",
-      title: "Circles",
-      fileType: "Music Audio",
-      artist: "Post Malone",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project19",
-      title: "Desert Landscapes",
-      fileType: "Photography",
-      artist: "Sarah Johnson",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    
-    
-    {
-      id: "project22",
-      title: "Mountain Expedition",
-      fileType: "Documentary",
-      artist: "Adventure Team",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.youtube.com/watch?v=Scxs7L0vhZ4",
-    },
-    {
-      id: "project23",
-      title: "Levitating",
-      fileType: "Music Video",
-      artist: "Dua Lipa",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.google.com",
-    },
-    {
-      id: "project24",
-      title: "Urban Life",
-      fileType: "Documentary",
-      artist: "City Studios",
-      image: "/assets/portfolioImage.png",
-      url: "https://www.youtube.com/watch?v=jG1SxuqIIg8",
-    },
-  ];
+      {
+        id: "project22",
+        title: "Mountain Expedition",
+        fileType: "Documentary",
+        artist: "Adventure Team",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.youtube.com/watch?v=Scxs7L0vhZ4",
+      },
+      {
+        id: "project23",
+        title: "Levitating",
+        fileType: "Music Video",
+        artist: "Dua Lipa",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.google.com",
+      },
+      {
+        id: "project24",
+        title: "Urban Life",
+        fileType: "Documentary",
+        artist: "City Studios",
+        image: "/assets/portfolioImage.png",
+        url: "https://www.youtube.com/watch?v=jG1SxuqIIg8",
+      },
+    ],
+    []
+  );
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const tabs: Tab[] = [
-    {
-      id: "all",
-      label: "All",
-      projects: projects,
-    },
-    {
-      id: "musicVideos",
-      label: "Music Videos",
-      projects: projects.filter((p) => p.fileType.includes("Music")),
-    },
-    {
-      id: "filmDocumentaries",
-      label: "Films & Documentaries",
-      projects: projects.filter((p) => p.fileType.includes("Documentary")),
-    },
-    {
-      id: "photography",
-      label: "Photography",
-      projects: projects.filter((p) => p.fileType.includes("Photography")),
-    },
-  ];
+  const tabs: Tab[] = useMemo(
+    () => [
+      {
+        id: "all",
+        label: "All",
+        projects: projects,
+      },
+      {
+        id: "musicVideos",
+        label: "Music Videos",
+        projects: projects.filter((p) => p.fileType.includes("Music")),
+      },
+      {
+        id: "filmDocumentaries",
+        label: "Films & Documentaries",
+        projects: projects.filter((p) => p.fileType.includes("Documentary")),
+      },
+      {
+        id: "photography",
+        label: "Photography",
+        projects: projects.filter((p) => p.fileType.includes("Photography")),
+      },
+    ],
+    [projects]
+  );
 
   const filteredProjects = useMemo(() => {
     const tabProjects =
