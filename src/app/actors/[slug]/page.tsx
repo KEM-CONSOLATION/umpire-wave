@@ -15,6 +15,7 @@ import {
   FiFacebook,
   FiTwitter,
 } from "react-icons/fi";
+import { SiTiktok } from "react-icons/si";
 
 const actorsData: Record<
   string,
@@ -28,9 +29,25 @@ const actorsData: Record<
       instagram?: string;
       facebook?: string;
       twitter?: string;
+      tiktok?: string;
     };
   }
 > = {
+  "blossom-barrett": {
+    name: "Blossom Barrett",
+    image: "/assets/TEAM MEMBERS/BLOSSOM BARRETT ACTOR:MARKETER.jpg",
+    bio: "A versatile actor and marketer who brings creativity and strategic thinking to both performance and brand promotion. Blossom's dynamic presence and marketing expertise make her a valuable asset to any production.",
+    achievements: [
+      "Dual expertise in acting and marketing",
+      "Strong on-screen presence",
+      "Strategic brand development",
+    ],
+    specializations: ["Drama", "Comedy", "Marketing"],
+    socialLinks: {
+      instagram: "https://www.instagram.com/blossom__barrett?igsh=dHN1M2g4OTk4MWZl",
+      tiktok: "https://www.tiktok.com/@digitalblursome?_r=1&_t=ZS-92iFOcuZnTL",
+    },
+  },
   "clever-dickson": {
     name: "Clever Dickson",
     image: "/assets/actors/CLEVER DICKSON.jpg",
@@ -41,6 +58,10 @@ const actorsData: Record<
       "Featured in award-winning film projects",
     ],
     specializations: ["Drama", "Action", "Comedy"],
+    socialLinks: {
+      facebook: "https://www.facebook.com/share/17sdkatrz4/?mibextid=wwXIfr",
+      tiktok: "https://www.tiktok.com/@official_cjdickson?_r=1&_t=ZS-92iDwJgJA5E",
+    },
   },
   "emmanuel-nemere": {
     name: "Emmanuel Nemere",
@@ -52,6 +73,10 @@ const actorsData: Record<
       "Recognized for versatility across genres",
     ],
     specializations: ["Drama", "Romance", "Thriller"],
+    socialLinks: {
+      instagram: "https://www.instagram.com/nemere2.8?igsh=ajcwd3J1cG43cnJk",
+      tiktok: "https://www.tiktok.com/@nemereemmanuel28?_r=1&_t=ZS-92iGJnaiQwW",
+    },
   },
   mimi: {
     name: "Mimi",
@@ -182,6 +207,17 @@ export default function ActorPage() {
                     aria-label="Twitter"
                   >
                     <FiTwitter className="w-5 h-5" />
+                  </a>
+                )}
+                {actor.socialLinks.tiktok && (
+                  <a
+                    href={actor.socialLinks.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-[#E7BF44] text-white flex items-center justify-center hover:bg-[#D4A93A] transition-colors cursor-pointer"
+                    aria-label="TikTok"
+                  >
+                    <SiTiktok className="w-5 h-5" />
                   </a>
                 )}
               </div>

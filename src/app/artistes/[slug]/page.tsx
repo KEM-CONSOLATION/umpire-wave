@@ -16,6 +16,7 @@ import {
   FiTwitter,
   FiMusic,
 } from "react-icons/fi";
+import { SiTiktok } from "react-icons/si";
 
 const artistesData: Record<
   string,
@@ -29,6 +30,7 @@ const artistesData: Record<
       instagram?: string;
       facebook?: string;
       twitter?: string;
+      tiktok?: string;
       spotify?: string;
       appleMusic?: string;
     };
@@ -195,6 +197,17 @@ export default function ArtistePage() {
                   aria-label="Spotify"
                 >
                   <FiMusic className="w-5 h-5" />
+                </a>
+              )}
+              {artiste.socialLinks?.tiktok && (
+                <a
+                  href={artiste.socialLinks.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-[#E7BF44] text-white flex items-center justify-center hover:bg-[#D4A93A] transition-colors cursor-pointer"
+                  aria-label="TikTok"
+                >
+                  <SiTiktok className="w-5 h-5" />
                 </a>
               )}
             </div>

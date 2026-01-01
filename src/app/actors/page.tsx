@@ -22,21 +22,26 @@ export default function ActorsPage() {
   const actors = [
     {
       id: 1,
+      name: "Blossom Barrett",
+      image: "/assets/TEAM MEMBERS/BLOSSOM BARRETT ACTOR:MARKETER.jpg",
+    },
+    {
+      id: 2,
       name: "Clever Dickson",
       image: "/assets/actors/CLEVER DICKSON.jpg",
     },
     {
-      id: 2,
+      id: 3,
       name: "Emmanuel Nemere",
       image: "/assets/actors/EMMANUEL NEMERE.jpeg",
     },
     {
-      id: 3,
+      id: 4,
       name: "Mimi",
       image: "/assets/actors/MIMI.jpg",
     },
     {
-      id: 4,
+      id: 5,
       name: "Queeneth Bassey",
       image: "/assets/actors/QUEENETH BASSEY.jpeg",
     },
