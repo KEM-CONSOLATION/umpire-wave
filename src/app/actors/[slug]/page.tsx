@@ -36,7 +36,7 @@ const actorsData: Record<
   "blossom-barrett": {
     name: "Blossom Barrett",
     image: "/assets/TEAM MEMBERS/BLOSSOM BARRETT ACTOR:MARKETER.jpg",
-    bio: "A versatile actor and marketer who brings creativity and strategic thinking to both performance and brand promotion. Blossom's dynamic presence and marketing expertise make her a valuable asset to any production.",
+    bio: "Blossom: The Screen Siren!  With a versatility that dazzles  and a presence that captivates , she brings every role to life with mesmerizing ease . Audiences can't look away , and the industry can't get enough.",
     achievements: [
       "Dual expertise in acting and marketing",
       "Strong on-screen presence",
