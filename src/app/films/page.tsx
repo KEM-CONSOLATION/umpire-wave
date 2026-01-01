@@ -172,20 +172,20 @@ export default function FilmsPage() {
         <div className="min-h-[400px]">
           {activeTab === "bts" && (
             <div className="space-y-8" data-aos="fade-up">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#48484A] mb-4">
-                  Behind The Scenes
-                </h2>
-                <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                  Get an exclusive look at the creative process, production
-                  moments, and the incredible teamwork that brings our films to
-                  life.
-                </p>
-              </div>
-
-              {/* Featured Videos Grid */}
               {featuredBTS.length > 0 ? (
                 <>
+                  <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#48484A] mb-4">
+                      Behind The Scenes
+                    </h2>
+                    <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                      Get an exclusive look at the creative process, production
+                      moments, and the incredible teamwork that brings our films to
+                      life.
+                    </p>
+                  </div>
+
+                  {/* Featured Videos Grid */}
                   <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 mb-12">
                     {featuredBTS.map((video) => (
                       <WaveSessionVideo
@@ -230,11 +230,13 @@ export default function FilmsPage() {
                   </div>
                 </>
               ) : (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Placeholder when no videos are added yet */}
-                  <div className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center">
-                    <p className="text-gray-400">
-                      Add video IDs to display BTS content
+                <div className="text-center py-16 md:py-24">
+                  <div className="space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#48484A] mb-2">
+                      Not BTS Yet
+                    </h2>
+                    <p className="font-[400] text-[18px] text-gray-600 max-w-2xl mx-auto">
+                      We&apos;re working on exciting behind-the-scenes content. Check back soon for updates!
                     </p>
                   </div>
                 </div>
