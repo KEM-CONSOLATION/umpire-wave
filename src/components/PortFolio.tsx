@@ -272,7 +272,6 @@ const PortFolio: React.FC = () => {
         image: "/assets/Images/IMG_4216.jpeg",
         url: "#",
       },
-
     ],
     []
   );
@@ -388,7 +387,8 @@ const PortFolio: React.FC = () => {
               <div className="space-y-3">
                 <p className="font-[600] text-[24px] text-[#48484A]">
                   {activeTab === "musicVideos" && "No Music Videos Available"}
-                  {activeTab === "filmDocumentaries" && "No Films & Documentaries Available"}
+                  {activeTab === "filmDocumentaries" &&
+                    "No Films & Documentaries Available"}
                   {activeTab === "all" && "No Projects Available"}
                   {activeTab === "photography" && "No Photography Available"}
                 </p>
