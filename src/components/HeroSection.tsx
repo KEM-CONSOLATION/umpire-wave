@@ -34,7 +34,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="hidden xl:flex flex-col gap-6 absolute left-6 top-1/2 -translate-y-1/2 z-20"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 hidden xl:flex flex-col gap-6"
       >
         {[
           { id: "facebook", url: "https://www.facebook.com/share/1DX7QdVcRs" },
@@ -71,7 +71,7 @@ const HeroSection = () => {
 
       {/* Hero Image Card - Centered */}
       <div
-        className="w-full rounded-[40px] relative min-h-[500px] lg:min-h-[700px] flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden group shadow-2xl"
+        className="w-full rounded-[40px] relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden group shadow-2xl"
         style={{ backgroundImage: "url('/assets/hero.png')" }}
       >
         {/* Subtle overlay */}
@@ -108,7 +108,7 @@ const HeroSection = () => {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12"
             >
               <Link href="/service" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto min-w-[200px] font-bold text-[16px] text-[#1c1c1e] py-[18px] px-[36px] bg-[#E7BF44] rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-[0_10px_30px_rgba(231,191,68,0.3)] cursor-pointer">
@@ -121,32 +121,6 @@ const HeroSection = () => {
                 </button>
               </Link>
             </motion.div>
-          </div>
-
-          <div className="hidden lg:flex items-center justify-center mt-20">
-            <div className="flex items-center gap-6 p-4 rounded-3xl bg-black/20 backdrop-blur-xl border border-white/10">
-              {[
-                "artisteManagement",
-                "eventCoverage",
-                "musicProduction",
-                "photography",
-                "studioRecording",
-                "studioRentals",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="relative group/brand overflow-hidden rounded-xl"
-                >
-                  <Image
-                    src={`/assets/${item}.jpg`}
-                    alt={item}
-                    width={80}
-                    height={80}
-                    className="object-cover w-16 h-16 transition-all duration-500 group-hover/brand:scale-125 opacity-80 group-hover/brand:opacity-100"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>
