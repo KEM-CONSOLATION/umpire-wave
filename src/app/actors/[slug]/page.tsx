@@ -15,7 +15,7 @@ import {
   FiFacebook,
   FiTwitter,
 } from "react-icons/fi";
-import { SiTiktok } from "react-icons/si";
+import { SiTiktok, SiYoutube } from "react-icons/si";
 
 const actorsData: Record<
   string,
@@ -30,6 +30,7 @@ const actorsData: Record<
       facebook?: string;
       twitter?: string;
       tiktok?: string;
+      youtube?: string;
     };
   }
 > = {
@@ -44,7 +45,8 @@ const actorsData: Record<
     ],
     specializations: ["Drama", "Comedy", "Marketing"],
     socialLinks: {
-      instagram: "https://www.instagram.com/blossom__barrett?igsh=dHN1M2g4OTk4MWZl",
+      instagram:
+        "https://www.instagram.com/blossom__barrett?igsh=dHN1M2g4OTk4MWZl",
       tiktok: "https://www.tiktok.com/@digitalblursome?_r=1&_t=ZS-92iFOcuZnTL",
     },
   },
@@ -60,7 +62,8 @@ const actorsData: Record<
     specializations: ["Drama", "Action", "Comedy"],
     socialLinks: {
       facebook: "https://www.facebook.com/share/17sdkatrz4/?mibextid=wwXIfr",
-      tiktok: "https://www.tiktok.com/@official_cjdickson?_r=1&_t=ZS-92iDwJgJA5E",
+      tiktok:
+        "https://www.tiktok.com/@official_cjdickson?_r=1&_t=ZS-92iDwJgJA5E",
     },
   },
   "emmanuel-nemere": {
@@ -88,6 +91,13 @@ const actorsData: Record<
       "Praised for comedic timing and emotional depth",
     ],
     specializations: ["Comedy", "Drama", "Romance"],
+    socialLinks: {
+      instagram:
+        "https://www.instagram.com/emehmiracle_?igsh=eHR0cWllZ3ZiOGQ2&utm_source=qr",
+      facebook: "https://www.facebook.com/share/17fRWmzcZb/?mibextid=wwXIfr",
+      tiktok: "https://www.tiktok.com/@emehmiracle?_r=1&_t=ZS-92jFuh6Vbvg",
+      youtube: "https://youtube.com/@emehmiraclechidera?feature=shared",
+    },
   },
   "queeneth-bassey": {
     name: "Queeneth Bassey",
@@ -218,6 +228,17 @@ export default function ActorPage() {
                     aria-label="TikTok"
                   >
                     <SiTiktok className="w-5 h-5" />
+                  </a>
+                )}
+                {actor.socialLinks.youtube && (
+                  <a
+                    href={actor.socialLinks.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-[#E7BF44] text-white flex items-center justify-center hover:bg-[#D4A93A] transition-colors cursor-pointer"
+                    aria-label="YouTube"
+                  >
+                    <SiYoutube className="w-5 h-5" />
                   </a>
                 )}
               </div>

@@ -180,8 +180,8 @@ export default function FilmsPage() {
                     </h2>
                     <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                       Get an exclusive look at the creative process, production
-                      moments, and the incredible teamwork that brings our films to
-                      life.
+                      moments, and the incredible teamwork that brings our films
+                      to life.
                     </p>
                   </div>
 
@@ -236,7 +236,8 @@ export default function FilmsPage() {
                       Not BTS Yet
                     </h2>
                     <p className="font-[400] text-[18px] text-gray-600 max-w-2xl mx-auto">
-                      We&apos;re working on exciting behind-the-scenes content. Check back soon for updates!
+                      We&apos;re working on exciting behind-the-scenes content.
+                      Check back soon for updates!
                     </p>
                   </div>
                 </div>
