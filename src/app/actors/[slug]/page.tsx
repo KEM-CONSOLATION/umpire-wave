@@ -36,7 +36,7 @@ const actorsData: Record<
 > = {
   "blossom-barrett": {
     name: "Blossom Barrett",
-    image: "/assets/TEAM MEMBERS/BLOSSOM BARRETT ACTOR:MARKETER.jpg",
+    image: "/assets/TEAM MEMBERS/Blossom Barret.jpeg",
     bio: "Blossom: The Screen Siren!  With a versatility that dazzles  and a presence that captivates , she brings every role to life with mesmerizing ease . Audiences can't look away , and the industry can't get enough.",
     achievements: [
       "Dual expertise in acting and marketing",

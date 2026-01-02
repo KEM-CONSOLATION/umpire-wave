@@ -23,7 +23,7 @@ export default function ActorsPage() {
     {
       id: 1,
       name: "Blossom Barrett",
-      image: "/assets/TEAM MEMBERS/BLOSSOM BARRETT ACTOR:MARKETER.jpg",
+      image: "/assets/TEAM MEMBERS/Blossom Barret.jpeg",
     },
     {
       id: 2,

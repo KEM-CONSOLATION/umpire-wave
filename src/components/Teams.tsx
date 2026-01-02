@@ -14,7 +14,7 @@ const teamMembers = [
   {
     name: "Blossom Barrett",
     role: "Actor, Marketer",
-    image: "/assets/TEAM MEMBERS/BLOSSOM BARRETT ACTOR:MARKETER.jpg",
+    image: "/assets/TEAM MEMBERS/Blossom Barret.jpeg",
   },
   {
     name: "Clever Dickson",
