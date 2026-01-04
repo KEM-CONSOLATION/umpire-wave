@@ -122,18 +122,22 @@ const Teams = () => {
                 href={`/team/${slug}`}
                 className="flex-shrink-0 space-y-4 w-[253px] text-center group cursor-pointer"
               >
-              <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src={getImageUrl(member.image, { width: 253, quality: 90, format: 'auto' })}
-                  alt={`${member.name} - ${member.role}`}
-                  className="w-full h-full object-cover"
-                  width={253}
-                  height={253}
-                  sizes="253px"
-                  quality={90}
-                  loading="lazy"
-                />
-              </div>
+                <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={getImageUrl(member.image, {
+                      width: 253,
+                      quality: 90,
+                      format: "auto",
+                    })}
+                    alt={`${member.name} - ${member.role}`}
+                    className="w-full h-full object-cover"
+                    width={253}
+                    height={253}
+                    sizes="253px"
+                    quality={90}
+                    loading="lazy"
+                  />
+                </div>
                 <div>
                   <p className="font-semibold text-[16px] text-[#48484A] group-hover:text-[#E7BF44] transition-colors">
                     {member.name}

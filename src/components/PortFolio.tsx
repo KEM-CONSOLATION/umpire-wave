@@ -119,7 +119,7 @@ const PortfolioItem: React.FC<Project> = ({
   }
 
   if (fileType === "Photography" || fileType === "Facility") {
-    const imageUrl = getImageUrl(image, { quality: 90, format: 'auto' });
+    const imageUrl = getImageUrl(image, { quality: 90, format: "auto" });
     return (
       <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
         <Image
@@ -135,7 +135,11 @@ const PortfolioItem: React.FC<Project> = ({
     );
   }
 
-  const imageUrl = getImageUrl(image, { width: 100, quality: 90, format: 'auto' });
+  const imageUrl = getImageUrl(image, {
+    width: 100,
+    quality: 90,
+    format: "auto",
+  });
   return (
     <div className="p-[10px] bg-[#FFFFFF] shadow rounded-md max-w-[400px] w-full">
       <div className="flex gap-[16px]">
@@ -699,7 +703,7 @@ const PortFolio: React.FC = () => {
       {
         id: "photo64",
         title: "Photography 64",
-      fileType: "Photography",
+        fileType: "Photography",
         artist: "Umpire Wave Studios",
         image: "/assets/Portfolio/DSC_9187.jpg",
         url: "#",
@@ -739,7 +743,7 @@ const PortFolio: React.FC = () => {
       {
         id: "photo69",
         title: "Photography 69",
-      fileType: "Photography",
+        fileType: "Photography",
         artist: "Umpire Wave Studios",
         image: "/assets/Portfolio/DSC_9197.jpg",
         url: "#",
@@ -771,7 +775,7 @@ const PortFolio: React.FC = () => {
       {
         id: "photo73",
         title: "Photography 73",
-      fileType: "Photography",
+        fileType: "Photography",
         artist: "Umpire Wave Studios",
         image: "/assets/Portfolio/DSC_9206.jpg",
         url: "#",
@@ -795,7 +799,7 @@ const PortFolio: React.FC = () => {
       {
         id: "photo76",
         title: "Photography 76",
-      fileType: "Photography",
+        fileType: "Photography",
         artist: "Umpire Wave Studios",
         image: "/assets/Portfolio/DSC_9210.jpg",
         url: "#",
@@ -919,31 +923,31 @@ const PortFolio: React.FC = () => {
 
   const tabs: Tab[] = useMemo(
     () => [
-    {
-      id: "all",
-      label: "All",
-      projects: projects,
-    },
-    {
-      id: "musicVideos",
-      label: "Music Videos",
-      projects: projects.filter((p) => p.fileType.includes("Music")),
-    },
-    {
-      id: "filmDocumentaries",
+      {
+        id: "all",
+        label: "All",
+        projects: projects,
+      },
+      {
+        id: "musicVideos",
+        label: "Music Videos",
+        projects: projects.filter((p) => p.fileType.includes("Music")),
+      },
+      {
+        id: "filmDocumentaries",
         label: "Films",
-      projects: projects.filter((p) => p.fileType.includes("Documentary")),
-    },
+        projects: projects.filter((p) => p.fileType.includes("Documentary")),
+      },
       {
         id: "facility",
         label: "Our Facility",
         projects: projects.filter((p) => p.fileType === "Facility"),
       },
-    {
-      id: "photography",
-      label: "Photography",
-      projects: projects.filter((p) => p.fileType.includes("Photography")),
-    },
+      {
+        id: "photography",
+        label: "Photography",
+        projects: projects.filter((p) => p.fileType.includes("Photography")),
+      },
     ],
     [projects]
   );
@@ -1050,9 +1054,9 @@ const PortFolio: React.FC = () => {
         ) : (
           <div className="col-span-full text-center py-12 md:py-16">
             {searchQuery.trim() ? (
-            <p className="font-[500] text-[18px] text-[#48484A]">
-              No projects found matching &apos;{searchQuery}&apos;
-            </p>
+              <p className="font-[500] text-[18px] text-[#48484A]">
+                No projects found matching &apos;{searchQuery}&apos;
+              </p>
             ) : (
               <div className="space-y-3">
                 <p className="font-[600] text-[24px] text-[#48484A]">
@@ -1083,7 +1087,10 @@ const PortFolio: React.FC = () => {
 
       {/* Pagination Controls */}
       {filteredProjects.length > itemsPerPage && (
-        <div className="mt-12 flex flex-col items-center gap-4" data-aos="fade-up">
+        <div
+          className="mt-12 flex flex-col items-center gap-4"
+          data-aos="fade-up"
+        >
           <div className="flex items-center gap-2">
             {/* Previous Button */}
             <button
@@ -1102,44 +1109,43 @@ const PortFolio: React.FC = () => {
 
             {/* Page Numbers */}
             <div className="flex items-center gap-1">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-                // Show first page, last page, current page, and pages around current
-                const showPage =
-                  page === 1 ||
-                  page === totalPages ||
-                  (page >= currentPage - 1 && page <= currentPage + 1);
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => {
+                  // Show first page, last page, current page, and pages around current
+                  const showPage =
+                    page === 1 ||
+                    page === totalPages ||
+                    (page >= currentPage - 1 && page <= currentPage + 1);
 
-                if (!showPage) {
-                  // Show ellipsis
-                  if (page === currentPage - 2 || page === currentPage + 2) {
-                    return (
-                      <span
-                        key={page}
-                        className="px-3 py-2 text-gray-500"
-                      >
-                        ...
-                      </span>
-                    );
+                  if (!showPage) {
+                    // Show ellipsis
+                    if (page === currentPage - 2 || page === currentPage + 2) {
+                      return (
+                        <span key={page} className="px-3 py-2 text-gray-500">
+                          ...
+                        </span>
+                      );
+                    }
+                    return null;
                   }
-                  return null;
-                }
 
-                return (
-                  <button
-                    key={page}
-                    onClick={() => handlePageChange(page)}
-                    className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
-                      currentPage === page
-                        ? "bg-[#E7BF44] text-white"
-                        : "bg-gray-100 text-[#48484A] hover:bg-gray-200 cursor-pointer"
-                    }`}
-                    aria-label={`Go to page ${page}`}
-                    aria-current={currentPage === page ? "page" : undefined}
-                  >
-                    {page}
-                  </button>
-                );
-              })}
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                        currentPage === page
+                          ? "bg-[#E7BF44] text-white"
+                          : "bg-gray-100 text-[#48484A] hover:bg-gray-200 cursor-pointer"
+                      }`}
+                      aria-label={`Go to page ${page}`}
+                      aria-current={currentPage === page ? "page" : undefined}
+                    >
+                      {page}
+                    </button>
+                  );
+                }
+              )}
             </div>
 
             {/* Next Button */}
@@ -1160,7 +1166,8 @@ const PortFolio: React.FC = () => {
 
           {/* Page Info */}
           <p className="text-sm text-gray-600">
-            Showing {startIndex + 1} - {Math.min(endIndex, filteredProjects.length)} of{" "}
+            Showing {startIndex + 1} -{" "}
+            {Math.min(endIndex, filteredProjects.length)} of{" "}
             {filteredProjects.length} items
           </p>
         </div>

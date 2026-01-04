@@ -5,6 +5,7 @@ This script automatically uploads all images from your local folders to Cloudina
 ## Setup
 
 ### 1. Install Cloudinary SDK
+
 ```bash
 npm install cloudinary
 ```
@@ -34,16 +35,20 @@ CLOUDINARY_API_SECRET=your-api-secret
 ### 4. Run the Upload Script
 
 **Option A: Upload Only (Keeps Local Files as Backup - Recommended)**
+
 ```bash
 npm run upload-images
 ```
 
 **Option B: Upload and Delete Local Files**
 Add to your `.env` file:
+
 ```env
 DELETE_AFTER_UPLOAD=true
 ```
+
 Then run:
+
 ```bash
 npm run upload-images
 ```
@@ -51,6 +56,7 @@ npm run upload-images
 ⚠️ **Warning**: Only use `DELETE_AFTER_UPLOAD=true` after you've verified images load correctly from Cloudinary!
 
 Or add to `package.json` scripts:
+
 ```json
 {
   "scripts": {
@@ -60,6 +66,7 @@ Or add to `package.json` scripts:
 ```
 
 Then run:
+
 ```bash
 npm run upload-images
 ```
@@ -113,6 +120,7 @@ npm run upload-images
 ## Troubleshooting
 
 ### "Cloudinary credentials not found"
+
 - Make sure `.env` file exists in project root
 - Check that all three variables are set:
   - `CLOUDINARY_CLOUD_NAME`
@@ -120,11 +128,13 @@ npm run upload-images
   - `CLOUDINARY_API_SECRET`
 
 ### "Rate limit exceeded"
+
 - The script has a small delay between uploads
 - If you get rate limited, wait a few minutes and run again
 - Cloudinary free tier has generous limits
 
 ### Some images fail to upload
+
 - Check file size (Cloudinary free tier: 10MB per file)
 - Check file format (supports: jpg, png, gif, webp)
 - Check internet connection
@@ -132,11 +142,13 @@ npm run upload-images
 ## After Upload
 
 1. Set `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` in `.env.local`:
+
    ```env
    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloud-name
    ```
 
 2. Restart your dev server:
+
    ```bash
    npm run dev
    ```
