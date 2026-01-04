@@ -18,7 +18,7 @@ interface FeaturedVideo {
 }
 
 export default function FilmsPage() {
-  const [activeTab, setActiveTab] = useState<TabType>("bts");
+  const [activeTab, setActiveTab] = useState<TabType>("featured");
   const [featuredBTS, setFeaturedBTS] = useState<FeaturedVideo[]>([]);
   const [featuredFilms, setFeaturedFilms] = useState<FeaturedVideo[]>([]);
   const [featuredChronicles, setFeaturedChronicles] = useState<FeaturedVideo[]>(
@@ -125,9 +125,9 @@ export default function FilmsPage() {
   }, []);
 
   const tabs = [
-    { id: "bts" as TabType, label: "BTS" },
     { id: "featured" as TabType, label: "Featured Films" },
     { id: "chronicles" as TabType, label: "Chronicles of Oga Solo" },
+    { id: "bts" as TabType, label: "BTS" },
   ];
 
   // YouTube Playlist URLs

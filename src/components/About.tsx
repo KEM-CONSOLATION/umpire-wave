@@ -46,7 +46,7 @@ const About = () => {
           <div className="order-2 lg:order-1" data-aos="fade-right">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/assets/Images/IMG_4206.jpeg"
+                src="/assets/Facility/IMG_2465.jpeg"
                 alt="Umpire Wave Studios"
                 width={617}
                 height={600}

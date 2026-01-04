@@ -1,81 +1,83 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { createSlug } from "@/lib/utils";
 
 const teamMembers = [
   {
     name: "Blessing Bassey",
-    role: "Human Resource Manager, Scriptwriter, Associate Producer",
+    role: "HR / Scriptwriter",
     image:
       "/assets/TEAM MEMBERS/BLESSING BASSEY HUMAN RESOURCE MANAGER: SCRIPTWRITER: ASSOCIATE PRODUCER.jpg",
   },
   {
     name: "Blossom Barrett",
-    role: "Actor, Marketer",
+    role: "CMO",
     image: "/assets/TEAM MEMBERS/Blossom Barret.jpeg",
   },
   {
     name: "Clever Dickson",
-    role: "Actor, Cinematographer",
+    role: "Production Manager / CAM Assistant",
     image: "/assets/TEAM MEMBERS/CLEVER DICKSON ACTOR: CINEMATOGRAPHER.jpeg",
   },
   {
     name: "Emmanuel Inyang",
-    role: "Maintenance Officer, Musician, Sound Recordist",
+    role: "Sound Recordist / Logistics",
     image:
       "/assets/TEAM MEMBERS/EMMANUEL INYANG MAINTENANCE OFFICER: MUSICIAN: SOUND RECORDIST.jpg",
   },
   {
     name: "Emmanuel Nemere",
-    role: "Actor",
+    role: "Writer / Business PR",
     image: "/assets/TEAM MEMBERS/EMMANUEL NEMERE ACTOR.jpeg",
   },
   {
     name: "Esther Manyo",
-    role: "Makeup Artist, Actor, Singer",
+    role: "Makeup Artist",
     image: "/assets/TEAM MEMBERS/ESTHER MANYO MAKEUP ARTIST: ACTOR: SINGER.jpg",
   },
   {
     name: "Francis Eyo",
-    role: "Studio Head, Musician",
+    role: "Live Studio Manager / Mixing Engineer",
     image: "/assets/TEAM MEMBERS/FRANCIS  EYO STUDIO HEAD: MUSICIAN.jpg",
   },
   {
     name: "Grandeur Amos",
-    role: "Music Team Head, Producer",
+    role: "Music Producer / Talent Manager",
     image: "/assets/TEAM MEMBERS/GRANDEUR AMOS MUSIC TEAM HEAD: PRODUCER.jpg",
   },
   {
     name: "Inimfon Inwang",
-    role: "Cinematographer, Editor",
+    role: "Cinematography Lead / D.O.P",
     image: "/assets/TEAM MEMBERS/INIMFON INWANG CINEMATOGRAPHER: EDITOR.jpg",
   },
   {
     name: "Isaac Brown",
-    role: "CEO, Founder",
+    role: "Director",
     image: "/assets/TEAM MEMBERS/ISAAC BROWN CEO:FOUNDER.jpg",
   },
   {
     name: "Marylyn Uyanah",
-    role: "Secretary, Artiste",
+    role: "Secretary",
     image: "/assets/TEAM MEMBERS/MARYLYN UYANAH SECRETARY: ARTISTE.jpg",
   },
   {
     name: "Rejoice Onyebuchi",
-    role: "Artiste, Props and Set Designer",
+    role: "Props and Set",
     image:
       "/assets/TEAM MEMBERS/REJOICE ONYEBUCHI ARTISTE: PROPS AND SET DESIGNER.jpg",
   },
   {
     name: "Samuel Brown",
-    role: "Team Member",
+    role: "BTS",
     image: "/assets/TEAM MEMBERS/SAMUEL BROWN.jpg",
   },
   {
     name: "Victor Ofum",
-    role: "Artiste, Light Man",
+    role: "Gaffer",
     image: "/assets/TEAM MEMBERS/VICTOR OFUM ARTISTE: LIGHT MAN.jpg",
   },
 ];
@@ -111,33 +113,37 @@ const Teams = () => {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none" />
 
         <div className="flex gap-8 animate-scroll">
-          {duplicatedMembers.map((member, index) => (
-            <div
-              key={`${member.name}-${index}`}
-              className="flex-shrink-0 space-y-4 w-[253px] text-center"
-            >
-              <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto shadow-lg ring-2 ring-gray-100 transition-transform duration-300 hover:scale-105">
-                <Image
-                  src={member.image}
-                  alt={`${member.name} - ${member.role}`}
-                  className="w-full h-full object-cover"
-                  width={253}
-                  height={253}
-                  sizes="253px"
-                  quality={90}
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <p className="font-semibold text-[16px] text-[#48484A]">
-                  {member.name}
-                </p>
-                <p className="font-normal text-[12px] text-gray-600 mt-1">
-                  {member.role}
-                </p>
-              </div>
-            </div>
-          ))}
+          {duplicatedMembers.map((member, index) => {
+            const slug = createSlug(member.name);
+            return (
+              <Link
+                key={`${member.name}-${index}`}
+                href={`/team/${slug}`}
+                className="flex-shrink-0 space-y-4 w-[253px] text-center group cursor-pointer"
+              >
+                <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role}`}
+                    className="w-full h-full object-cover"
+                    width={253}
+                    height={253}
+                    sizes="253px"
+                    quality={90}
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-[16px] text-[#48484A] group-hover:text-[#E7BF44] transition-colors">
+                    {member.name}
+                  </p>
+                  <p className="font-normal text-[12px] text-gray-600 mt-1">
+                    {member.role}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
