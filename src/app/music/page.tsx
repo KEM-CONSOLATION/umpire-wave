@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { getYouTubeVideoInfo } from "@/lib/youtube";
+import { getImageUrl } from "@/lib/cloudinary";
 
 type TabType = "wave-sessions" | "rising-stars";
 
@@ -122,7 +123,7 @@ export default function MusicPage() {
       <HeaderCard
         title="Sound. Vision. Influence."
         subtitle="Where Music Meets Innovation"
-        image="/assets/Header_.png"
+        image={getImageUrl("/assets/Header_.png", { width: 1920, quality: 90 })}
         currentPage="Music"
         previousPage="Production"
       />

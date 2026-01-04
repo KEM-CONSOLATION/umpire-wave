@@ -1,8 +1,9 @@
 "use client";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getImageUrl } from "@/lib/cloudinary";
 const Brands = () => {
   useEffect(() => {
     AOS.init({
@@ -26,8 +27,11 @@ const Brands = () => {
 
       <div className="brands-marquee">
         <div className="space-x-[32px] flex items-center">
-          <Image
-            src="/assets/brands.png"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/brands.png", {
+              width: 360,
+              quality: 90,
+            })}
             alt="Brand1"
             width={180}
             height={80}
@@ -35,9 +39,13 @@ const Brands = () => {
             quality={90}
             loading="lazy"
             className="object-contain max-w-[180px] h-auto opacity-70 hover:opacity-100 transition-opacity"
+            objectFit="contain"
           />
-          <Image
-            src="/assets/brands2.png"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/brands2.png", {
+              width: 360,
+              quality: 90,
+            })}
             alt="Brand2"
             width={180}
             height={80}
@@ -45,9 +53,13 @@ const Brands = () => {
             quality={90}
             loading="lazy"
             className="object-contain max-w-[180px] h-auto opacity-70 hover:opacity-100 transition-opacity"
+            objectFit="contain"
           />
-          <Image
-            src="/assets/brands3.png"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/brands3.png", {
+              width: 360,
+              quality: 90,
+            })}
             alt="Brand3"
             width={180}
             height={80}
@@ -55,6 +67,7 @@ const Brands = () => {
             quality={90}
             loading="lazy"
             className="object-contain max-w-[180px] h-auto opacity-70 hover:opacity-100 transition-opacity"
+            objectFit="contain"
           />
         </div>
       </div>

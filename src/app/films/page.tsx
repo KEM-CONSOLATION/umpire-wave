@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { getYouTubeVideoInfo } from "@/lib/youtube";
+import { getImageUrl } from "@/lib/cloudinary";
 
 type TabType = "bts" | "featured" | "chronicles";
 
@@ -145,7 +146,7 @@ export default function FilmsPage() {
       <HeaderCard
         title="Sound. Vision. Influence."
         subtitle="Cinematic Excellence in Every Frame"
-        image="/assets/Header_.png"
+        image={getImageUrl("/assets/Header_.png", { width: 1920, quality: 90 })}
         currentPage="Films"
         previousPage="Production"
       />

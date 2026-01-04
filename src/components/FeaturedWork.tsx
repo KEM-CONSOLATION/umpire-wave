@@ -2,8 +2,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import Link from "next/link";
+import { getImageUrl } from "@/lib/cloudinary";
 
 const FeaturedWork = () => {
   useEffect(() => {
@@ -18,28 +19,28 @@ const FeaturedWork = () => {
     {
       id: 1,
       title: "Photography Collection",
-      image: "/assets/Images/IMG_4206.jpeg",
+      image: "/assets/Facility/IMG_4207.jpeg",
       category: "Photography",
       link: "/portfolio?tab=photography",
     },
     {
       id: 2,
       title: "Music Production",
-      image: "/assets/musicProduction.jpg",
+      image: "/assets/musicProduction.JPG",
       category: "Music",
       link: "/music",
     },
     {
       id: 3,
       title: "Film Production",
-      image: "/assets/eventCoverage.jpg",
+      image: "/assets/eventCoverage.JPG",
       category: "Film",
       link: "/films",
     },
     {
       id: 4,
       title: "Event Coverage",
-      image: "/assets/studioRecording.jpg",
+      image: "/assets/studioRecording.JPG",
       category: "Events",
       link: "/portfolio",
     },
@@ -67,16 +68,17 @@ const FeaturedWork = () => {
             data-aos-delay={index * 100}
           >
             <div className="relative aspect-square">
-              <Image
-                src={project.image}
+              <ImageWithSkeleton
+                src={getImageUrl(project.image, { width: 800, quality: 90 })}
                 alt={project.title}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 quality={90}
                 loading="lazy"
+                objectFit="cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10" />
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
               <p className="text-sm font-semibold text-[#E7BF44] uppercase tracking-wide mb-1">

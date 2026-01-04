@@ -9,6 +9,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getImageUrl } from "@/lib/cloudinary";
 import {
   FiArrowLeft,
   FiInstagram,
@@ -317,7 +318,7 @@ export default function TeamMemberPage() {
       <HeaderCard
         title="Sound. Vision. Influence."
         subtitle={`Meet ${teamMember.name}`}
-        image="/assets/Header_.png"
+        image={getImageUrl("/assets/Header_.png", { width: 1920, quality: 90 })}
         currentPage={teamMember.name}
         previousPage="About"
       />

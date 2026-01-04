@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getImageUrl } from "@/lib/cloudinary";
 const Creativity = () => {
   useEffect(() => {
     AOS.init({
@@ -30,8 +31,11 @@ const Creativity = () => {
         data-aos="fade-up"
       >
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
-          <Image
-            src="/assets/artisteManagement.jpg"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/artisteManagement.JPG", {
+              width: 800,
+              quality: 90,
+            })}
             alt="Artiste Management"
             width={400}
             height={410}
@@ -39,11 +43,15 @@ const Creativity = () => {
             quality={90}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            objectFit="cover"
           />
         </div>
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
-          <Image
-            src="/assets/eventCoverage.jpg"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/eventCoverage.JPG", {
+              width: 800,
+              quality: 90,
+            })}
             alt="Event Coverage"
             width={400}
             height={410}
@@ -51,11 +59,15 @@ const Creativity = () => {
             quality={90}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            objectFit="cover"
           />
         </div>
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
-          <Image
-            src="/assets/musicProduction.jpg"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/musicProduction.JPG", {
+              width: 800,
+              quality: 90,
+            })}
             alt="Music Production"
             width={400}
             height={410}
@@ -63,11 +75,15 @@ const Creativity = () => {
             quality={90}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            objectFit="cover"
           />
         </div>
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
-          <Image
-            src="/assets/photography.jpg"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/photography.JPG", {
+              width: 800,
+              quality: 90,
+            })}
             alt="Photography"
             width={400}
             height={410}
@@ -75,11 +91,15 @@ const Creativity = () => {
             quality={90}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            objectFit="cover"
           />
         </div>
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
-          <Image
-            src="/assets/studioRecording.jpg"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/studioRecording.JPG", {
+              width: 800,
+              quality: 90,
+            })}
             alt="Studio Recording"
             width={400}
             height={410}
@@ -87,11 +107,15 @@ const Creativity = () => {
             quality={90}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            objectFit="cover"
           />
         </div>
         <div className="w-full max-w-[400px] h-[410px] rounded-[8px] overflow-hidden">
-          <Image
-            src="/assets/studioRentals.jpg"
+          <ImageWithSkeleton
+            src={getImageUrl("/assets/studioRentals.JPG", {
+              width: 800,
+              quality: 90,
+            })}
             alt="Studio Rentals"
             width={400}
             height={410}
@@ -99,6 +123,7 @@ const Creativity = () => {
             quality={90}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            objectFit="cover"
           />
         </div>
       </div>

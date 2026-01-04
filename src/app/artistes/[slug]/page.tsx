@@ -3,12 +3,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import HeaderCard from "@/components/HeaderCard";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import Image from "next/image";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getImageUrl } from "@/lib/cloudinary";
 import {
   FiArrowLeft,
   FiInstagram,
@@ -121,7 +122,7 @@ export default function ArtistePage() {
       <HeaderCard
         title="Sound. Vision. Influence."
         subtitle={`Discover ${artiste.name}`}
-        image="/assets/Header_.png"
+        image={getImageUrl("/assets/Header_.png", { width: 1920, quality: 90 })}
         currentPage={artiste.name}
         previousPage="Artistes"
       />
@@ -143,14 +144,15 @@ export default function ArtistePage() {
           {/* Artiste Image */}
           <div className="relative">
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src={artiste.image}
+              <ImageWithSkeleton
+                src={getImageUrl(artiste.image, { width: 800, quality: 90 })}
                 alt={artiste.name}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
                 priority
+                objectFit="cover"
               />
             </div>
             {/* Social Links */}

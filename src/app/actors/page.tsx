@@ -6,9 +6,10 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Image from "next/image";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import Link from "next/link";
 import { createSlug } from "@/lib/utils";
+import { getImageUrl } from "@/lib/cloudinary";
 
 export default function ActorsPage() {
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function ActorsPage() {
       <HeaderCard
         title="Sound. Vision. Influence."
         subtitle="Meet Our Talented Actors"
-        image="/assets/Header_.png"
+        image={getImageUrl("/assets/Header_.png", { width: 1920, quality: 90 })}
         currentPage="Actors"
         previousPage="Our Talent"
       />
@@ -83,14 +84,15 @@ export default function ActorsPage() {
                 data-aos-delay={index * 100}
               >
                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200 shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                  <Image
-                    src={actor.image}
+                  <ImageWithSkeleton
+                    src={getImageUrl(actor.image, { width: 400, quality: 90 })}
                     alt={actor.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 128px, 160px"
                     quality={90}
                     loading="lazy"
+                    objectFit="cover"
                   />
                 </div>
                 <h3 className="font-semibold text-base md:text-lg text-[#48484A] group-hover:text-[#E7BF44] transition-colors">

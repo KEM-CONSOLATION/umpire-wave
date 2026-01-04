@@ -10,6 +10,7 @@ import Tiktok from "@assets/TiktokIcon.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
+import { getImageUrl } from "@/lib/cloudinary";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -55,7 +56,10 @@ const Footer = () => {
             <div className="text-center md:text-left">
               <Link href="/" className="inline-block mb-4">
                 <Image
-                  src="/assets/umpireLogo.png"
+                  src={getImageUrl("/assets/umpireLogo.PNG", {
+                    width: 360,
+                    quality: 90,
+                  })}
                   alt="Umpire Wave Studios Logo"
                   width={180}
                   height={45}

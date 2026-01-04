@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import React, { useState, useRef, useEffect } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import { getImageUrl } from "@/lib/cloudinary";
 
 const sections = ["home", "about", "service", "portfolio"];
 
@@ -115,7 +116,10 @@ const Nav = () => {
           onClick={closeMenu}
         >
           <Image
-            src="/assets/umpireLogo.png"
+            src={getImageUrl("/assets/umpireLogo.PNG", {
+              width: 280,
+              quality: 90,
+            })}
             alt="Umpire Wave Logo"
             width={140}
             height={140}

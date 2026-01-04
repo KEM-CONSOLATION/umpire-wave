@@ -2,9 +2,10 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import Link from "next/link";
 import { createSlug } from "@/lib/utils";
+import { getImageUrl } from "@/lib/cloudinary";
 
 const FeaturedTalent = () => {
   useEffect(() => {
@@ -72,14 +73,15 @@ const FeaturedTalent = () => {
               data-aos-delay={index * 100}
             >
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg ring-2 ring-gray-100 transition-all duration-300 group-hover:ring-[#E7BF44] group-hover:shadow-xl">
-                <Image
-                  src={actor.image}
+                <ImageWithSkeleton
+                  src={getImageUrl(actor.image, { width: 400, quality: 90 })}
                   alt={actor.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   sizes="(max-width: 768px) 160px, 192px"
                   quality={90}
                   loading="lazy"
+                  objectFit="cover"
                 />
               </div>
               <div>
@@ -108,14 +110,15 @@ const FeaturedTalent = () => {
               data-aos-delay={index * 100}
             >
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg ring-2 ring-gray-100 transition-all duration-300 group-hover:ring-[#E7BF44] group-hover:shadow-xl">
-                <Image
-                  src={artiste.image}
+                <ImageWithSkeleton
+                  src={getImageUrl(artiste.image, { width: 400, quality: 90 })}
                   alt={artiste.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   sizes="(max-width: 768px) 160px, 192px"
                   quality={90}
                   loading="lazy"
+                  objectFit="cover"
                 />
               </div>
               <div>

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import AOS from "aos";
@@ -123,7 +123,7 @@ const Teams = () => {
                 className="flex-shrink-0 space-y-4 w-[253px] text-center group cursor-pointer"
               >
                 <div className="h-[253px] w-[253px] rounded-full bg-gray-200 overflow-hidden mx-auto shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-105">
-                  <Image
+                  <ImageWithSkeleton
                     src={getImageUrl(member.image, {
                       width: 253,
                       quality: 90,
@@ -136,6 +136,7 @@ const Teams = () => {
                     sizes="253px"
                     quality={90}
                     loading="lazy"
+                    objectFit="cover"
                   />
                 </div>
                 <div>

@@ -1,10 +1,11 @@
 "use client";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import React, { useEffect } from "react";
 import Teams from "./Teams";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
+import { getImageUrl } from "@/lib/cloudinary";
 
 const About = () => {
   useEffect(() => {
@@ -44,12 +45,14 @@ const About = () => {
       <section className="mb-20 md:mb-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1" data-aos="fade-right">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/assets/Facility/IMG_2465.jpeg"
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[617/600]">
+              <ImageWithSkeleton
+                src={getImageUrl("/assets/Facility/IMG_2465.jpeg", {
+                  width: 1234,
+                  quality: 90,
+                })}
                 alt="Umpire Wave Studios"
-                width={617}
-                height={600}
+                fill
                 className="object-cover w-full h-auto"
                 priority
                 sizes="(max-width: 1024px) 100vw, 617px"
@@ -121,14 +124,16 @@ const About = () => {
             </div>
           </div>
           <div
-            className="relative rounded-2xl overflow-hidden shadow-2xl"
+            className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[617/600]"
             data-aos="fade-left"
           >
-            <Image
-              src="/assets/Images/IMG_4207.jpeg"
+            <ImageWithSkeleton
+              src={getImageUrl("/assets/Facility/IMG_4207.jpeg", {
+                width: 1234,
+                quality: 90,
+              })}
               alt="Core Values"
-              width={617}
-              height={600}
+              fill
               className="object-cover w-full h-auto"
               sizes="(max-width: 1024px) 100vw, 617px"
               quality={90}

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import HeaderCard from "@/components/HeaderCard";
 import Service from "@/components/Service";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import { getImageUrl } from "@/lib/cloudinary";
 
 export default function ServicePage() {
   return (
@@ -14,7 +15,7 @@ export default function ServicePage() {
       <HeaderCard
         title="Sound. Vision. Influence."
         subtitle="We Bring Creative Visions to Life."
-        image="/assets/Header_.png"
+        image={getImageUrl("/assets/Header_.png", { width: 1920, quality: 90 })}
         currentPage="Our Service"
         previousPage="Home"
       />

@@ -1,11 +1,12 @@
 "use client";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import React, { useState, useMemo, useEffect } from "react";
 import { FiSearch, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { BiPlayCircle } from "react-icons/bi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { getImageUrl } from "@/lib/cloudinary";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -122,7 +123,7 @@ const PortfolioItem: React.FC<Project> = ({
     const imageUrl = getImageUrl(image, { quality: 90, format: "auto" });
     return (
       <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
-        <Image
+        <ImageWithSkeleton
           src={imageUrl}
           fill
           alt={title}
@@ -130,6 +131,7 @@ const PortfolioItem: React.FC<Project> = ({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={90}
           loading="lazy"
+          objectFit="cover"
         />
       </div>
     );
@@ -143,16 +145,16 @@ const PortfolioItem: React.FC<Project> = ({
   return (
     <div className="p-[10px] bg-[#FFFFFF] shadow rounded-md max-w-[400px] w-full">
       <div className="flex gap-[16px]">
-        <Image
-          src={imageUrl}
-          width={100}
-          height={100}
-          alt={title}
-          className="max-w-[117px] w-full h-full object-cover"
-          sizes="117px"
-          quality={90}
-          loading="lazy"
-        />
+        <div className="relative w-[100px] h-[100px] flex-shrink-0">
+          <ImageWithSkeleton
+            src={imageUrl}
+            width={100}
+            height={100}
+            alt={title}
+            objectFit="cover"
+            className="rounded"
+          />
+        </div>
         <div className="space-y-[8px]">
           <p className="font-[600] text-[24px] text-[#48484A]">{title}</p>
           <p className="font-[400] text-[16px] text-[#48484A]">{fileType}</p>

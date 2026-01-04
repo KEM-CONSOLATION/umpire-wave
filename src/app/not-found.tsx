@@ -9,6 +9,7 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FiArrowLeft, FiHome } from "react-icons/fi";
+import { getImageUrl } from "@/lib/cloudinary";
 
 const NotFound = () => {
   const router = useRouter();
@@ -31,7 +32,10 @@ const NotFound = () => {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <Image
-              src="/assets/umpireLogo.PNG"
+              src={getImageUrl("/assets/umpireLogo.PNG", {
+                width: 240,
+                quality: 90,
+              })}
               alt="Umpire Wave Logo"
               width={120}
               height={120}
