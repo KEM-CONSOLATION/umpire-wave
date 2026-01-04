@@ -74,7 +74,10 @@ const NotFound = () => {
           >
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#E7BF44]/10 flex items-center justify-center">
               <Image
-                src="/assets/WarningOctagon.svg"
+                src={getImageUrl("/assets/WarningOctagon.svg", {
+                  width: 80,
+                  quality: 90,
+                })}
                 alt="warning"
                 width={40}
                 height={40}

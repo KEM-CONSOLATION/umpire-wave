@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "next/image";
+import ImageWithSkeleton from "./ImageWithSkeleton";
 import Link from "next/link";
 import ServiceBookingModal from "./ServiceBookingModal";
+import { getImageUrl } from "@/lib/cloudinary";
 
 interface ServiceCard {
   id: number;
@@ -150,12 +151,13 @@ const Service = () => {
           >
             {/* Image Section */}
             <div className="relative h-64 overflow-hidden bg-gray-200">
-              <Image
-                src={service.image}
+              <ImageWithSkeleton
+                src={getImageUrl(service.image, { width: 800, quality: 90 })}
                 alt={service.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                objectFit="cover"
               />
               <div
                 className={`absolute inset-0 bg-gradient-to-t ${

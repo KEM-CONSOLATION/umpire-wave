@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import HeaderCard from "@/components/HeaderCard";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import Image from "next/image";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -340,14 +340,15 @@ export default function TeamMemberPage() {
           {/* Team Member Image */}
           <div className="relative">
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src={teamMember.image}
+              <ImageWithSkeleton
+                src={getImageUrl(teamMember.image, { width: 800, quality: 90 })}
                 alt={teamMember.name}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
                 priority
+                objectFit="cover"
               />
             </div>
             {/* Social Links */}
