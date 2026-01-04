@@ -53,3 +53,11 @@ next-env.d.ts
 *.MOV
 *.mp4
 *.MP4
+
+# Image assets (stored in Cloudinary)
+/public/assets/Portfolio/
+/public/assets/Facility/
+/public/assets/TEAM MEMBERS/
+/public/assets/actors/
+/public/assets/Artiste/
+/public/assets/Images/

@@ -5,6 +5,7 @@ import { FiSearch, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { BiPlayCircle } from "react-icons/bi";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getImageUrl } from "@/lib/cloudinary";
 
 interface Project {
   id: string;
@@ -118,10 +119,11 @@ const PortfolioItem: React.FC<Project> = ({
   }
 
   if (fileType === "Photography" || fileType === "Facility") {
+    const imageUrl = getImageUrl(image, { quality: 90, format: 'auto' });
     return (
       <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
         <Image
-          src={image}
+          src={imageUrl}
           fill
           alt={title}
           className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -133,11 +135,12 @@ const PortfolioItem: React.FC<Project> = ({
     );
   }
 
+  const imageUrl = getImageUrl(image, { width: 100, quality: 90, format: 'auto' });
   return (
     <div className="p-[10px] bg-[#FFFFFF] shadow rounded-md max-w-[400px] w-full">
       <div className="flex gap-[16px]">
         <Image
-          src={image}
+          src={imageUrl}
           width={100}
           height={100}
           alt={title}
