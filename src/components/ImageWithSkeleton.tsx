@@ -54,12 +54,12 @@ const ImageWithSkeleton = ({
     objectFit === "cover"
       ? "object-cover"
       : objectFit === "contain"
-      ? "object-contain"
-      : objectFit === "fill"
-      ? "object-fill"
-      : objectFit === "none"
-      ? "object-none"
-      : "object-scale-down";
+        ? "object-contain"
+        : objectFit === "fill"
+          ? "object-fill"
+          : objectFit === "none"
+            ? "object-none"
+            : "object-scale-down";
 
   return (
     <div className="relative w-full h-full overflow-hidden">

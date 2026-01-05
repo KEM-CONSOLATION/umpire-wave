@@ -80,7 +80,10 @@ export default function ArtistesPage() {
               >
                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200 shadow-lg ring-2 ring-gray-100 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
                   <ImageWithSkeleton
-                    src={getImageUrl(artiste.image, { width: 400, quality: 90 })}
+                    src={getImageUrl(artiste.image, {
+                      width: 400,
+                      quality: 90,
+                    })}
                     alt={artiste.name}
                     fill
                     className="object-cover"

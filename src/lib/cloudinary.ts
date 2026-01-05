@@ -73,7 +73,10 @@ function getCloudinaryPath(localPath: string): string {
     cloudinaryPath = `artistes/${path.replace("Artiste/", "")}`;
   } else if (path.startsWith("Images/")) {
     cloudinaryPath = `assets/${path.replace("Images/", "")}`;
-  } else if (!path.includes("/") || path.match(/^[^/]+\.(jpg|jpeg|png|gif|webp)$/i)) {
+  } else if (
+    !path.includes("/") ||
+    path.match(/^[^/]+\.(jpg|jpeg|png|gif|webp)$/i)
+  ) {
     // Handle general assets in root (Header_, brands, hero, etc.)
     cloudinaryPath = `assets/${path}`;
   } else {
