@@ -57,32 +57,30 @@ const ContactPage = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const baseTemplateParams = {
+      // Get CC emails (all except primary)
+      const ccEmails = contactEmails.all
+        .filter((email) => email !== contactEmails.primary)
+        .join(",");
+
+      const templateParams = {
         name: `${data.first_name} ${data.last_name}`,
         email: data.email,
         message: data.description,
         subject: data.description.slice(0, 20),
-        to_email: contactEmails.all.join(","), // Include both emails
+        to_email: contactEmails.primary, // Send TO primary email
+        cc_email: ccEmails || undefined, // CC other emails
         reply_to: data.email,
       };
 
-      // Send emails to both addresses
-      const emailPromises = contactEmails.all.map((toEmail) =>
-        emailjs.send(
-          "service_kk9enic",
-          "template_w35npys",
-          {
-            ...baseTemplateParams,
-            to_email: toEmail,
-          },
-          "M5loi_Mue6YL6n2Ce"
-        )
+      // Send single email with CC
+      const result = await emailjs.send(
+        "service_kk9enic",
+        "template_w35npys",
+        templateParams,
+        "M5loi_Mue6YL6n2Ce"
       );
 
-      const results = await Promise.all(emailPromises);
-      const allSuccessful = results.every((result) => result.status === 200);
-
-      if (allSuccessful) {
+      if (result.status === 200) {
         setStatus({
           type: "success",
           message:
@@ -91,7 +89,7 @@ const ContactPage = () => {
         reset();
         setCharCount(0);
       } else {
-        throw new Error("Some emails failed to send");
+        throw new Error("Email failed to send");
       }
     } catch (error) {
       setStatus({

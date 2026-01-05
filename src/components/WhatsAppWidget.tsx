@@ -62,7 +62,7 @@ export default function WhatsAppWidget({
 
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative rounded-full bg-[#25D366] p-4 text-white shadow-2xl transition-colors hover:bg-[#20BA5A]"
+        className="relative rounded-full cursor-pointer bg-[#25D366] p-4 text-white shadow-2xl transition-colors hover:bg-[#20BA5A]"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         animate={{
