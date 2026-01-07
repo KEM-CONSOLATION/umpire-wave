@@ -35,8 +35,10 @@ const Service = () => {
         "We manage the careers of talented musicians, helping them grow their brand, connect with the right audiences, and secure meaningful opportunities.",
       features: [
         "Talent discovery & grooming",
-        "Brand partnerships, PR, tour booking",
-        "Content marketing & social media strategy",
+        "Career Development",
+        "Artist Profile & Branding",
+        "Promotion & Marketing",
+        "Music Distribution",
       ],
       image: "/assets/artisteManagement.JPG",
       accent: "yellow",
@@ -47,9 +49,12 @@ const Service = () => {
       description:
         "Get your music heard on global platforms. We provide digital and physical distribution to ensure your sound reaches fans everywhere.",
       features: [
-        "Spotify, Apple Music, Boomplay, Audiomack, etc.",
-        "Royalty tracking and analytics",
-        "Sync licensing for film and TV",
+        "Professional music recording & beat production",
+        "Mixing & mastering to industry standards",
+        "Creative direction & sound development",
+        "Release planning & scheduling",
+        "Metadata, ISRC & catalog management",
+        "Global digital distribution (Spotify, Apple Music, Audiomack, etc.)",
       ],
       image: "/assets/musicProduction.JPG",
       accent: "white",
@@ -60,10 +65,12 @@ const Service = () => {
       description:
         "Our state-of-the-art recording facility is equipped for top-tier sound production with cutting-edge technology and expert engineers.",
       features: [
-        "Music recording, mixing & mastering",
-        "Voice-over recording",
-        "Sound design & audio post-production",
-        "Production beats & songwriting support",
+        "Vocal & instrumental recording",
+        "Music, voice-over & podcast sessions",
+        "Professional studio engineers",
+        "High-end microphones & equipment",
+        "Session planning & technical support",
+        "Comfortable, creative recording environment",
       ],
       image: "/assets/studioRecording.JPG",
       accent: "yellow",
@@ -74,9 +81,11 @@ const Service = () => {
       description:
         "Need a creative space? We offer flexible rental options for studios, equipment, and production facilities.",
       features: [
-        "Recording studios",
-        "Film and photography sets",
-        "Lighting, cameras, and sound gear",
+        "Musical instruments & studio equipment",
+        "Cameras, lenses & stabilizers",
+        "Lighting, audio & grip equipment",
+        "Film & photography accessories",
+        "Equipment setup & technical support",
       ],
       image: "/assets/studioRentals.JPG",
       accent: "white",
@@ -101,23 +110,29 @@ const Service = () => {
       description:
         "Capture every moment with our professional event solutions, delivering broadcast-quality coverage.",
       features: [
-        "Concerts, festivals & launches",
-        "Livestream & multi-cam setup",
-        "Interviews & red carpet coverage",
+        "Event video coverage & photography",
+
+        "Multi-camera livestreaming setups",
+        "Live sound capture & streaming",
+        "Online broadcast to YouTube, Facebook, Instagram, etc.",
+        "On-site technical crew & support",
+        "Post-event edits and highlights",
       ],
       image: "/assets/eventCoverage.JPG",
       accent: "white",
     },
     {
       id: 7,
-      title: "Photography & Photo Studio",
+      title: "Photography & Film",
       description:
         "Our photography arm delivers both creativity and quality, capturing moments that tell compelling stories.",
       features: [
-        "Album covers, promo shots",
-        "Fashion/editorial photoshoots",
-        "Event photography",
-        "Studio rental for creatives",
+        "Studio & outdoor photography",
+        "Cinematography & film production",
+        "Professional editing, color grading, and post-production",
+
+        "Commercial, music video, and campaign content",
+        "Portraits, events, and creative storytelling",
       ],
       image: "/assets/photography.JPG",
       accent: "white",

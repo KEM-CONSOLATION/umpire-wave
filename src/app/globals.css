@@ -102,12 +102,12 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-253px * 6 - 2rem * 6));
+    transform: translateX(calc(-1 * var(--scroll-width, 0px)));
   }
 }
 
 .animate-scroll {
-  animation: scroll-horizontal 30s linear infinite;
+  animation: scroll-horizontal 40s linear infinite;
 }
 
 .animate-scroll:hover {

@@ -118,9 +118,10 @@ const CoreServices: React.FC = () => {
           "We manage the careers of talented musicians, helping them grow their brand, connect with the right audiences, and secure meaningful opportunities. Our services include:",
         description: (
           <ul className="list-none space-y-[16px]">
-            <li>1. Talent discovery & grooming</li>
-            <li>2. Brand partnerships, PR, tour booking</li>
-            <li>3. Content marketing & social media strategy</li>
+            <li>1. Career Development</li>
+            <li>2. Artist Profile & Branding</li>
+            <li>3. Promotion & Marketing</li>
+            <li>4. Music Distribution</li>
           </ul>
         ),
       },
@@ -138,9 +139,15 @@ const CoreServices: React.FC = () => {
           "Get your music heard on global platforms. We provide digital and physical distribution to ensure your sound reaches fans everywhere:",
         description: (
           <ul className="list-none space-y-[16px]">
-            <li>1. Spotify, Apple Music, Boomplay, Audiomack, etc.</li>
-            <li>2. Royalty tracking and analytics</li>
-            <li>3. Sync licensing for film and TV</li>
+            <li>1. Professional music recording & beat production</li>
+            <li>2. Mixing & mastering to industry standards</li>
+            <li>3. Creative direction & sound development</li>
+            <li>4. Release planning & scheduling</li>
+            <li>5. Metadata, ISRC & catalog management</li>
+            <li>
+              6. Global digital distribution (Spotify, Apple Music, Audiomack,
+              etc.)
+            </li>
           </ul>
         ),
       },
@@ -158,10 +165,12 @@ const CoreServices: React.FC = () => {
           "Our state-of-the-art recording facility is equipped for top-tier sound production:",
         description: (
           <ul className="list-none space-y-[16px]">
-            <li>1. Music recording, mixing & mastering.</li>
-            <li>2. Voice-over recording</li>
-            <li>3. Sound design & audio post-production</li>
-            <li>4. Production beats & songwriting support</li>
+            <li>1. Vocal & instrumental recording</li>
+            <li>2. Music, voice-over & podcast sessions</li>
+            <li>3. Professional studio engineers</li>
+            <li>4. High-end microphones & equipment</li>
+            <li>5. Session planning & technical support</li>
+            <li>6. Comfortable, creative recording environment</li>
           </ul>
         ),
       },
@@ -178,9 +187,12 @@ const CoreServices: React.FC = () => {
         heading: "Need a creative space? We rent out:",
         description: (
           <ul className="list-none space-y-[16px]">
-            <li>1. Recording studios.</li>
-            <li>2. Film and photography sets</li>
-            <li>3. Lighting, cameras, and sound gear</li>
+            <li>1. Musical instruments & studio equipment</li>
+
+            <li>2. Cameras, lenses & stabilizers</li>
+            <li>3. Lighting, audio & grip equipment</li>
+            <li>4. Film & photography accessories</li>
+            <li>5. Equipment setup & technical support</li>
           </ul>
         ),
       },
@@ -198,9 +210,14 @@ const CoreServices: React.FC = () => {
         heading: "Capture every moment with our professional event solutions:",
         description: (
           <ul className="list-none space-y-[16px]">
-            <li>1. Concerts, festivals & launches.</li>
-            <li>2. Livestream & multi-cam setup</li>
-            <li>3. Interviews & red carpet coverage</li>
+            <li>1. Event video coverage & photography</li>
+
+            <li>2. Multi-camera livestreaming setups</li>
+
+            <li>3. Live sound capture & streaming</li>
+            <li>4. Online broadcast to YouTube, Facebook, Instagram, etc.</li>
+            <li>5. On-site technical crew & support</li>
+            <li>6. Post-event edits and highlights</li>
           </ul>
         ),
       },
@@ -217,10 +234,11 @@ const CoreServices: React.FC = () => {
         heading: "Our photography arm delivers both creativity and quality:",
         description: (
           <ul className="list-none space-y-[16px]">
-            <li>1. Album covers, promo shots.</li>
-            <li>2. Fashion/editorial photoshoots</li>
-            <li>3. Event photography</li>
-            <li>4. Studio rental for creatives</li>
+            <li>1. Studio & outdoor photography</li>
+            <li>2. Cinematography & film production</li>
+            <li>3. Professional editing, color grading, and post-production</li>
+            <li>4. Commercial, music video, and campaign content</li>
+            <li>5. Portraits, events, and creative storytelling</li>
           </ul>
         ),
       },

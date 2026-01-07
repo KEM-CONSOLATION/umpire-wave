@@ -9,10 +9,30 @@ import { getImageUrl } from "@/lib/cloudinary";
 
 const teamMembers = [
   {
+    name: "Isaac Brown",
+    role: "Director",
+    image: "/assets/TEAM MEMBERS/ISAAC BROWN CEO:FOUNDER.jpg",
+  },
+  {
     name: "Blessing Bassey",
     role: "HR / Scriptwriter",
     image:
       "/assets/TEAM MEMBERS/BLESSING BASSEY HUMAN RESOURCE MANAGER: SCRIPTWRITER: ASSOCIATE PRODUCER.jpg",
+  },
+  {
+    name: "Grandeur Amos",
+    role: "Music Producer / Talent Manager",
+    image: "/assets/TEAM MEMBERS/GRANDEUR AMOS MUSIC TEAM HEAD: PRODUCER.jpg",
+  },
+  {
+    name: "Francis Eyo",
+    role: "Live Studio Manager / Mixing Engineer",
+    image: "/assets/TEAM MEMBERS/FRANCIS  EYO STUDIO HEAD: MUSICIAN.jpg",
+  },
+  {
+    name: "Inimfon Inwang",
+    role: "Cinematography Lead / D.O.P",
+    image: "/assets/TEAM MEMBERS/INIMFON INWANG CINEMATOGRAPHER: EDITOR.jpg",
   },
   {
     name: "Blossom Barrett",
@@ -40,26 +60,7 @@ const teamMembers = [
     role: "Makeup Artist",
     image: "/assets/TEAM MEMBERS/ESTHER MANYO MAKEUP ARTIST: ACTOR: SINGER.jpg",
   },
-  {
-    name: "Francis Eyo",
-    role: "Live Studio Manager / Mixing Engineer",
-    image: "/assets/TEAM MEMBERS/FRANCIS  EYO STUDIO HEAD: MUSICIAN.jpg",
-  },
-  {
-    name: "Grandeur Amos",
-    role: "Music Producer / Talent Manager",
-    image: "/assets/TEAM MEMBERS/GRANDEUR AMOS MUSIC TEAM HEAD: PRODUCER.jpg",
-  },
-  {
-    name: "Inimfon Inwang",
-    role: "Cinematography Lead / D.O.P",
-    image: "/assets/TEAM MEMBERS/INIMFON INWANG CINEMATOGRAPHER: EDITOR.jpg",
-  },
-  {
-    name: "Isaac Brown",
-    role: "Director",
-    image: "/assets/TEAM MEMBERS/ISAAC BROWN CEO:FOUNDER.jpg",
-  },
+
   {
     name: "Marylyn Uyanah",
     role: "Secretary",
@@ -91,8 +92,18 @@ const Teams = () => {
     });
   }, []);
 
-  // Duplicate team members for seamless infinite scroll
-  const duplicatedMembers = [...teamMembers, ...teamMembers, ...teamMembers];
+  // Duplicate team members for seamless infinite scroll (need at least 3 copies)
+  const duplicatedMembers = [
+    ...teamMembers,
+    ...teamMembers,
+    ...teamMembers,
+    ...teamMembers,
+  ];
+
+  // Calculate the width of one full set (member width + gap)
+  const itemWidth = 253; // w-[253px]
+  const gap = 32; // gap-8 = 2rem = 32px
+  const singleSetWidth = teamMembers.length * (itemWidth + gap);
 
   return (
     <div className="px-4 py-16" data-aos="fade-up">
@@ -113,7 +124,14 @@ const Teams = () => {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-8 animate-scroll">
+        <div
+          className="flex gap-8 animate-scroll"
+          style={
+            {
+              "--scroll-width": `${singleSetWidth}px`,
+            } as React.CSSProperties
+          }
+        >
           {duplicatedMembers.map((member, index) => {
             const slug = createSlug(member.name);
             return (
