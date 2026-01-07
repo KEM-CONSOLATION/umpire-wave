@@ -46,6 +46,7 @@ export default function MusicPage() {
         "rElFhCrgR-k",
         "wBkMvmrZsVQ",
         "gTnNmYRGy48",
+        "kHWy2vpF5_8",
       ];
 
       const videosWithTitles = await Promise.all(

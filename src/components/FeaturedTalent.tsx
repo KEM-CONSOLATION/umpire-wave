@@ -20,7 +20,7 @@ const FeaturedTalent = () => {
     {
       name: "Clever Dickson",
       image: "/assets/actors/CLEVER DICKSON.jpg",
-      role: "Actor & Cinematographer",
+      role: "Actor",
       link: "/actors",
     },
     {
