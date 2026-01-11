@@ -45,8 +45,8 @@ const teamMembers = [
     image: "/assets/TEAM MEMBERS/CLEVER DICKSON ACTOR: CINEMATOGRAPHER.jpeg",
   },
   {
-    name: "Emmanuel Inyang",
-    role: "Sound Recordist / Logistics",
+    name: "Emmanuel Inyang Inyang",
+    role: "Sound Recordist / Maintenance Officer",
     image:
       "/assets/TEAM MEMBERS/EMMANUEL INYANG MAINTENANCE OFFICER: MUSICIAN: SOUND RECORDIST.jpg",
   },

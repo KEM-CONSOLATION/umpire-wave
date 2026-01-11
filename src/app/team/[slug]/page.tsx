@@ -96,20 +96,23 @@ const teamMembersData: Record<
     },
   },
   "emmanuel-inyang": {
-    name: "Emmanuel Inyang",
-    role: "Sound Recordist / Logistics",
+    name: "Emmanuel Inyang Inyang",
+    role: "Sound Recordist / Maintenance Officer / Musician",
     image:
       "/assets/TEAM MEMBERS/EMMANUEL INYANG MAINTENANCE OFFICER: MUSICIAN: SOUND RECORDIST.jpg",
-    bio: "Emmanuel Inyang is the technical backbone of our audio production. With expertise in sound recording and logistics management, he ensures every project has the perfect audio quality and seamless operational support needed for success.",
+    bio: "Emmanuel Inyang Inyang is a multidisciplinary professional from Cross River State whose work spans filmmaking, technical support, and service-based practice. As a D'dum Priest, his cultural background informs a disciplined and grounded approach to his craft. He is recognized for reliability, technical awareness, and a strong commitment to excellence across his professional roles as a Filmmaker (Sound Recordist), Musician (Talking drummer), Pastry Professional, and Maintenance Officer at Umpire Wave Studio.",
     responsibilities: [
-      "Sound recording and audio engineering",
-      "Logistics and equipment management",
-      "Maintenance of studio and field equipment",
+      "Sound recording and audio quality control for film and media productions",
+      "Location sound recording and sound capture for visual storytelling",
+      "Facility upkeep, equipment care, and operational support",
+      "Pastry production and food preparation",
+      "Talking drum performance and musical contributions",
     ],
     achievements: [
-      "Delivered exceptional audio quality on all projects",
-      "Streamlined logistics operations",
-      "Maintained 100% equipment reliability",
+      "Delivered exceptional audio quality on all film and media productions",
+      "Maintained technical excellence in location sound recording",
+      "Ensured seamless operational support for studio facilities",
+      "Combined cultural heritage with professional excellence",
     ],
   },
   "emmanuel-nemere": {

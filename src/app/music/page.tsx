@@ -43,7 +43,7 @@ export default function MusicPage() {
     const fetchWaveSessionTitles = async () => {
       const videoIds: string[] = [
         "bjafWv0JJJA",
-        "rElFhCrgR-k",
+        // "rElFhCrgR-k",
         "wBkMvmrZsVQ",
         "gTnNmYRGy48",
         "kHWy2vpF5_8",

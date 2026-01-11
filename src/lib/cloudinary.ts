@@ -26,21 +26,22 @@ const USE_CLOUDINARY = Boolean(CLOUDINARY_CLOUD_NAME);
 /**
  * Clean filename for Cloudinary (matches upload script logic)
  * Replace special characters and spaces with underscores
+ * Note: Cloudinary public_id does NOT include file extension
  */
 function cleanFilename(filename: string): string {
   // Extract filename from path if it includes directory
   const parts = filename.split("/");
   const name = parts[parts.length - 1];
-  const ext = name.includes(".") ? name.substring(name.lastIndexOf(".")) : "";
+  // Get filename without extension (matching upload script behavior)
   const nameWithoutExt = name.includes(".")
     ? name.substring(0, name.lastIndexOf("."))
     : name;
 
   // Replace special characters and spaces (matching upload script)
-  const cleanName =
-    nameWithoutExt
-      .replace(/[:/\\?#\[\]@!$&'()*+,;=]/g, "_")
-      .replace(/\s+/g, "_") + ext;
+  // DO NOT add extension back - Cloudinary stores files without extension in public_id
+  const cleanName = nameWithoutExt
+    .replace(/[:/\\?#\[\]@!$&'()*+,;=]/g, "_")
+    .replace(/\s+/g, "_");
 
   // Reconstruct path if there were directories
   if (parts.length > 1) {

@@ -225,7 +225,7 @@ const CoreServices: React.FC = () => {
     {
       imageSrc: "/assets/photography.jpg",
       number: "07.",
-      title: "Photography & Photo Studio",
+      title: "Photography & Film",
       initialBg: "white",
       flippedBg: "yellow-400",
       initialTextColor: "gray-700",

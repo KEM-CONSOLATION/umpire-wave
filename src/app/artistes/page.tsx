@@ -41,6 +41,11 @@ export default function ArtistesPage() {
       name: "Vee Ofum",
       image: "/assets/Artiste/VEE OFUM.jpg",
     },
+    {
+      id: 5,
+      name: "Marylyn Nyen Uyanah",
+      image: "/assets/Artiste/MaryLyn Nyen Uyanah.jpeg",
+    },
   ];
 
   return (

@@ -47,6 +47,11 @@ const artistesData: Record<
       "Collaborations with top-tier artists",
       "Growing fan base across multiple platforms",
     ],
+    socialLinks: {
+      instagram:
+        "https://www.instagram.com/reel/DS_GHzqjIpd/?igsh=MXR5OHhxY3VlcnU2NA==",
+      tiktok: "https://www.tiktok.com/@bgirlofficial1/",
+    },
   },
   "izik-brown": {
     name: "Izik Brown",
@@ -69,6 +74,12 @@ const artistesData: Record<
       "Unique artistic vision",
       "Growing recognition in the music community",
     ],
+    socialLinks: {
+      instagram:
+        "https://www.instagram.com/rj_buchi?igsh=aDEzemE2bmVoeTQ%3D&utm_source=qr",
+      facebook: "https://www.facebook.com/share/1G3wj7aEyi/?mibextid=wwXIfr",
+      tiktok: "https://www.tiktok.com/@rj_buchi?_r=1&_t=ZS-92zXcw52gIG",
+    },
   },
   "vee-ofum": {
     name: "Vee Ofum",
@@ -80,6 +91,28 @@ const artistesData: Record<
       "Dedicated following",
       "Meaningful musical contributions",
     ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/vee.ofum?igsh=MW45NXI1dzZ4aGVyYg==",
+      facebook: "https://www.facebook.com/veeofum",
+      tiktok: "https://www.tiktok.com/@veeofum12?_r=1&_t=ZS-92zYi9VzOz6",
+    },
+  },
+  "marylyn-nyen-uyanah": {
+    name: "Marylyn Nyen Uyanah",
+    image: "/assets/Artiste/MaryLyn Nyen Uyanah.jpeg",
+    bio: "Marylyn Uyanah, popularly known as Lynn, born on the 4th of June, is a gospel music artist whose sound is rooted in faith, intimacy, and soulful expression. With a passion for creating music that speaks to both the heart and the spirit, she blends contemporary gospel elements with rich melodies and honest lyrics that reflect devotion, hope, and belonging in Christ. Her music centers on the message of Jesus—not just as Savior, but as Lord, Redeemer, and the One to whom she belongs. Rather than focusing on struggle alone, her songs emphasize identity, redemption, and the beauty of a life anchored in God's love. Through intentional songwriting, she creates moments of reflection, worship, and connection that feel personal yet universal. Driven by purpose more than performance, Lynn sees music as a calling and a vessel for transformation. Whether through recorded songs or live ministrations, her desire is to create an atmosphere where listeners encounter truth, healing, and renewed faith. Her sound is calm yet powerful, soulful yet reverent—music that lingers long after the last note. As she continues to grow and release new music, Lynn remains committed to authenticity, excellence, and impact, using her voice to point hearts back to God and remind listeners of who they are in Him.",
+    genre: ["Gospel", "Contemporary Gospel"],
+    achievements: [
+      "Soulful, intimate, and reflective sound",
+      "Creating music that draws people closer to God",
+      "Affirming identity in Christ through heartfelt expression",
+    ],
+    socialLinks: {
+      instagram:
+        "https://www.instagram.com/marylynuyanah?igsh=MTBlMDN4dmw1NGQ4YQ==",
+      facebook: "https://www.facebook.com/share/1G1oPDLjAN/",
+      tiktok: "https://www.tiktok.com/@marylynuyanah0?_r=1&_t=ZS-92icyoXioir",
+    },
   },
 };
 
